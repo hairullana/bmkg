@@ -32,7 +32,7 @@ require 'conn.php';
 <link href="src/style.css" rel="stylesheet">
 </head>
 <body>
-<?php require 'navbar.php' ?>
+<?php require 'templates/navbar.php' ?>
 
 <div class="container">
     <p class="header-tambah">Tambah Data</p>
@@ -82,7 +82,7 @@ require 'conn.php';
     </form>
 </div>
 
-<?php require 'footer.php' ?>
+<?php require 'templates/footer.php' ?>
 
 <!-- Optional JavaScript; choose one of the two! -->
 <!-- Option 1: Bootstrap Bundle with Popper -->

@@ -57,7 +57,7 @@ if(isset($_POST["search"])){
   </head>
   <body>
 
-  <?php require 'navbar.php' ?>
+  <?php require 'templates/navbar.php' ?>
     
 <main>
     <div class="container">
@@ -139,7 +139,7 @@ if(isset($_POST["search"])){
 
 
 
-<?php require 'footer.php' ?>
+<?php require 'templates/footer.php' ?>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
