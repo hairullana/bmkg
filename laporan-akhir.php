@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION["login-bmkg"]) || $_SESSION["login-bmkg"] == false){
+  echo "
+    <script>
+      alert('Anda belum login!')
+      location.href = 'login.php'
+    </script>
+  ";
+}
+
+if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
+  echo "
+    <script>
+      alert('Akses ditolak!')
+      location.href = 'index.php'
+    </script>
+  ";
+}  
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,17 +38,7 @@
 <link href="src/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <nav class="navbar nav">
-    <div class="container">
-        <a class="navbar-brand" href="#"><img src="https://i.ibb.co/2jdyRKg/logo.png" alt="" width="90" height="70"></a>
-        <p>
-            Kalibrasi BMKG
-        </p>
-        <button type="button" class="btn btn-primary">Logout</button>
-    </div>
-    </nav>
-</div>
+<?php require 'templates/navbar.php' ?>
 
 <div class="container">
     <p class="header-tambah">Laporan Akhir</p>

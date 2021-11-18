@@ -66,6 +66,18 @@ if(isset($_POST["search"])){
             <div class="panel-heading">       
               <div class="mb-4">
               <p>Anda login sebagai <b><?= $_SESSION["role"] ?></b></p>
+              <div class="my-3">
+                <?php if($role == "admin") : ?>
+                <a href="spt.php" type="button" class="btn btn-primary">Cetak SPT</a>
+                <a href="nota-dinas.php" type="button" class="btn btn-primary">Cetak Nota Dinas</a>
+                <a href="laporan-akhir.php" type="button" class="btn btn-primary">Cetak Laporan Akhir</a>
+                <?php elseif ($role == "lab") : ?>
+                <a href="nota-dinas.php" type="button" class="btn btn-primary">Cetak Nota Dinas</a>
+                <?php elseif ($role == "tu") : ?>
+                <a href="spt.php" type="button" class="btn btn-primary">Cetak SPT</a>
+                <a href="laporan-akhir.php" type="button" class="btn btn-primary">Cetak Laporan Akhir</a>
+                <?php endif; ?>
+              </div>
               </div>      
                 <div class="my-3">
                   <form class="d-flex" method="post">
@@ -120,12 +132,12 @@ if(isset($_POST["search"])){
                 <td>
                   <a href="edit.php?id=<?= $data['id'] ?>" type="button" class="btn btn-warning">Edit</a>
                   <a href="hapus.php?id=<?= $data['id'] ?>" type="button" class="btn btn-danger">Hapus</a>
-                  <?php if($role == "admin") : ?>
+                  <!-- <?php if($role == "admin") : ?>
                   <a href="lihat-sp.php" type="button" class="btn btn-secondary">Lihat SP</a>
                   <a href="lihat-spt.php" type="button" class="btn btn-secondary">Lihat SPT</a>
                   <?php else : ?>
                   <a href="cetak.php" type="button" class="btn btn-secondary">Cetak</a>
-                  <?php endif; ?>
+                  <?php endif; ?> -->
                 </td>
               </tr>
             <?php endforeach; ?>
