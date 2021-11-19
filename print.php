@@ -32,7 +32,9 @@ if(isset($_POST['cetak-spt'])){
 
     $query = "INSERT into spt VALUES('', '$noTugas', '$nama', '$nip', '$gol', '$jabatanUtama', '$unitKerja', '$nama1', '$nip1', '$gol1', '$jabatan1', '$nama2', '$nip2', '$gol2', '$jabatan2', '$tugas', '$lokasi', '$lama', '$tanggalBerangkat', '$dana')";
 
-    mysqli_query($conn, $query);
+    if(!isset($_POST['dont-save-db'])){
+        mysqli_query($conn, $query);
+    }
 
     // mysqli_error($conn);die;
 
@@ -212,6 +214,7 @@ if(isset($_POST['cetak-spt'])){
     
     ';
 }else if(isset($_POST['cetak-laporan'])){
+    if(!isset($_POST['dont-save-db'])){
     // var_dump($_FILES);die;
     $ukuranFile = $_FILES["foto"]["size"];
     $temp = $_FILES["foto"]["tmp_name"];
@@ -278,7 +281,12 @@ if(isset($_POST['cetak-spt'])){
 
     $query = "INSERT INTO laporan VALUES('', '$periodeTanggal', '$judulKegiatan', '$pendahuluan', '$pelaksana', '$dasarKegiatan', '$lokasi', '$lingkupKegiatan', '$hasil', '$rekomendasi', '$foto', '$keteranganFoto')";
 
-    mysqli_query($conn, $query);
+        mysqli_query($conn, $query);
+    }else {
+        $namaFileBaru = $_POST['foto'];
+    }
+
+    
 
     // if ( mysqli_affected_rows($conn) < 0 ){
         // echo mysqli_error($conn);die;
@@ -290,7 +298,7 @@ if(isset($_POST['cetak-spt'])){
 
     $print = '
         <link rel="stylesheet" href="src/style.css">
-        <div style="margin: 0px 150px;">
+        <div style="margin: 0px 50px;">
             <div style="text-align: center;">
                 <h3>LAPORAN KEGIATAN KALIBRASI LAPANG STASIUN METEOROLOGI KLAS III MALI - ALOR DI BBMKG WILAYAH III</h3>
                 <h3>TANGGAL ' . $_POST['periode-tanggal'] . '</h3>
@@ -409,7 +417,10 @@ if(isset($_POST['cetak-spt'])){
 
     $query = "INSERT INTO nota VALUES('','$nomor','$yth','$dari','$hal','$tanggal','$tembusan','$tugas','$lokasi','$selama','$tanggalBerangkat','$tanggalKembali','$sumberDana','$nama','$nip','$pangkat','$jabatan','$nama2','$nip2','$pangkat2','$jabatan2','$nama3','$nip3','$pangkat3','$jabatan3')";
 
-    mysqli_query($conn, $query);
+    if(!isset($_POST['dont-save-db'])){
+        mysqli_query($conn, $query);
+    }
+
 
 
 
