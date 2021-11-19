@@ -40,100 +40,104 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
 <?php require 'templates/navbar.php' ?>
 
 <div class="container">
-    <p class="header-tambah">Cetak SPT</p>
-    <p class="header-secondary">Yang bertandatangan dibawah ini :</p>
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">No Tugas</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="No Tugas">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nama">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">NIP</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="NIP">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Pangkat/Golongan</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Pangkat/Golongan">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Jabatan</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Jabatan">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Unit kerja</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Unit Kerja">
-    </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
 
-    <p class="header-secondary">Dengan ini memberikan tugas kepada :</p>
-    <p class="header-secondary">1</p>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nama">
+      <p class="header-tambah">Cetak SPT</p>
+      <p class="header-secondary">Yang bertandatangan dibawah ini :</p>
+      <form action="print.php" method="post">
+        <div class="mb-3">
+            <label for="no-tugas" class="form-label">No Tugas</label>
+            <input required type="text" class="form-control" id="no-tugas" name="no-tugas" placeholder="No Tugas">
+        </div>
+        <div class="mb-3">
+            <label for="nama" class="form-label">Nama</label>
+            <input required type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+        </div>
+        <div class="mb-3">
+            <label for="nip" class="form-label">NIP</label>
+            <input required type="text" class="form-control" id="nip" name="nip" placeholder="NIP">
+        </div>
+        <div class="mb-3">
+            <label for="gol" class="form-label">Pangkat/Golongan</label>
+            <input required type="text" class="form-control" id="gol" name="gol" placeholder="Pangkat/Golongan">
+        </div>
+        <div class="mb-3">
+            <label for="jabatan-utama" class="form-label">Jabatan</label>
+            <input required type="text" class="form-control" id="jabatan-utama" name="jabatan-utama" placeholder="Jabatan">
+        </div>
+        <div class="mb-3">
+            <label for="unit-kerja" class="form-label">Unit kerja</label>
+            <input required type="text" class="form-control" id="unit-kerja" name="unit-kerja" placeholder="Unit Kerja">
+        </div>
+    
+        <p class="header-secondary">Dengan ini memberikan tugas kepada :</p>
+        <p class="header-secondary">1</p>
+        <div class="mb-3">
+            <label for="nama1" class="form-label">Nama</label>
+            <input required type="text" class="form-control" id="nama1" name="nama1" placeholder="Nama">
+        </div>
+        <div class="mb-3">
+            <label for="nip1" class="form-label">NIP</label>
+            <input required type="text" class="form-control" id="nip1" name="nip1" placeholder="NIP">
+        </div>
+        <div class="mb-3">
+            <label for="gol1" class="form-label">Pangkat/ Golongan</label>
+            <input required type="text" class="form-control" id="gol1" placeholder="Pangkat/Golongan">
+        </div>
+        <div class="mb-3">
+            <label for="jabatan1" class="form-label">Jabatan</label>
+            <input required type="text" class="form-control" id="jabatan1" name="jabatan1" placeholder="Jabatan">
+        </div>
+    
+        <p class="header-secondary">2</p>
+        <div class="mb-3">
+            <label for="nama2" class="form-label">Nama</label>
+            <input required type="text" class="form-control" id="nama2" name="nama2" placeholder="Nama">
+        </div>
+        <div class="mb-3">
+            <label for="nip2" class="form-label">NIP</label>
+            <input required type="text" class="form-control" id="nip2" name="nip2" placeholder="NIP">
+        </div>
+        <div class="mb-3">
+            <label for="gol2" class="form-label">Pangkat/ Golongan</label>
+            <input required type="text" class="form-control" id="gol2" name="gol2" placeholder="Pangkat/Golongan">
+        </div>
+        <div class="mb-3">
+            <label for="jabatan2" class="form-label">Jabatan</label>
+            <input required type="text" class="form-control" id="jabatan2" name="jabatan2" placeholder="Jabatan">
+        </div>
+    
+        <p class="header-secondary">Untuk Melaksanakan</p>
+    
+        <div class="mb-3">
+            <label for="tugas" class="form-label">Tugas</label>
+            <input required type="text" class="form-control" id="tugas"  name="tugas" placeholder="Tugas">
+        </div>
+        <div class="mb-3">
+            <label for="lokasi" class="form-label">Lokasi</label>
+            <input required type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi">
+        </div>
+        <div class="mb-3">
+            <label for="lama" class="form-label">Selama</label>
+            <input required type="text" class="form-control" id="lama" name="lama" placeholder="Selama">
+        </div>
+        <div class="mb-3">
+            <label for="tanggal-berangkat" class="form-label">Tanggal Berangkat</label>
+            <input required type="text" class="form-control" id="tanggal-berangkat" name="tanggal-berangkat" placeholder="Tanggal Berangkat">
+        </div>
+        <div class="mb-3">
+            <label for="dana" class="form-label">Sumber Dana</label>
+            <input required type="text" class="form-control" id="dana" name="dana" placeholder="Sumber Dana">
+        </div>
+        <a href="index.php" class="btn btn-danger tambah" type="submit">Kembali</a>
+        <button class="btn btn-warning tambah" type="submit" name="cetak-spt">Cetak Laporan</button>
+      </form>
     </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">NIP</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="NIP">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Pangkat/ Golongan</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Pangkat/Golongan">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Jabatan</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Jabatan">
-    </div>
-
-    <p class="header-secondary">2</p>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nama">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">NIP</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="NIP">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Pangkat/ Golongan</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Pangkat/Golongan">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Jabatan</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Jabatan">
-    </div>
-
-    <p class="header-secondary">Untuk Melaksanakan</p>
-
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Tugas</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Tugas">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Lokasi</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Lokasi">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Selama</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Selama">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Tanggal Berangkat</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Tanggal Berangkat">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Sumber Dana</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Sumber Dana">
-    </div>
-    <button class="btn btn-danger tambah" type="submit">Kembali</button>
-    <button class="btn btn-warning tambah" type="submit">Cetak Laporan</button>
+  </div>
 </div>
 
-<footer class="footer-wrapper">
-     <p>Copyright &copy; Luh Ristiari <em class="pull-right">30 Oktober 2021</em></p>
-</footer>
-
+<?= require 'templates/footer.php' ?>
 <!-- Optional JavaScript; choose one of the two! -->
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
