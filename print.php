@@ -1,11 +1,42 @@
 <?php
 
+require 'conn.php';
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 $mpdf = new \Mpdf\Mpdf();
 
 
 if(isset($_POST['cetak-spt'])){
+
+    $noTugas = $_POST["no-tugas"];
+    $nama = $_POST["nama"];
+    $nip = $_POST["nip"];
+    $gol = $_POST["gol"];
+    $jabatanUtama = $_POST["jabatan-utama"];
+    $unitKerja = $_POST["unit-kerja"];
+    $nama1 = $_POST["nama1"];
+    $nip1 = $_POST["nip1"];
+    $gol1 = $_POST["gol1"];
+    $jabatan1 = $_POST['jabatan1'];
+    $nama2 = $_POST["nama2"];
+    $nip2 = $_POST["nip2"];
+    $gol2 = $_POST["gol2"];
+    $jabatan2 = $_POST["jabatan2"];
+    $tugas = $_POST["tugas"];
+    $lokasi = $_POST["lokasi"];
+    $lama = $_POST["lama"];
+    $tanggalBerangkat = $_POST["tanggal-berangkat"];
+    $dana = $_POST["dana"];
+
+
+    $query = "INSERT into spt VALUES('', '$noTugas', '$nama', '$nip', '$gol', '$jabatanUtama', '$unitKerja', '$nama1', '$nip1', '$gol1', '$jabatan1', '$nama2', '$nip2', '$gol2', '$jabatan2', '$tugas', '$lokasi', '$lama', '$tanggalBerangkat', '$dana')";
+
+    mysqli_query($conn, $query);
+
+    // mysqli_error($conn);die;
+
+
     $print = '
         <!DOCTYPE html>
         <html lang="en">
@@ -232,6 +263,31 @@ if(isset($_POST['cetak-spt'])){
     $namaFileBaru = uniqid().'.'.$ekstensiGambar;
     move_uploaded_file($temp,'images/'.$namaFileBaru);
 
+    $periodeTanggal = $_POST["periode-tanggal"];
+    $judulKegiatan = $_POST["judul-kegiatan"];
+    $pendahuluan = $_POST["pendahuluan"];
+    $pelaksana = $_POST["pelaksana"];
+    $dasarKegiatan = $_POST["dasar-kegiatan"];
+    $lokasi = $_POST["lokasi"];
+    $lingkupKegiatan = $_POST["lingkup-kegiatan"];
+    $hasil = $_POST["hasil"];
+    $rekomendasi = $_POST["rekomendasi"];
+    $foto = $namaFileBaru;
+    $keteranganFoto = $_POST["keterangan-foto"];
+
+
+    $query = "INSERT INTO laporan VALUES('', '$periodeTanggal', '$judulKegiatan', '$pendahuluan', '$pelaksana', '$dasarKegiatan', '$lokasi', '$lingkupKegiatan', '$hasil', '$rekomendasi', '$foto', '$keteranganFoto')";
+
+    mysqli_query($conn, $query);
+
+    // if ( mysqli_affected_rows($conn) < 0 ){
+        // echo mysqli_error($conn);die;
+    
+
+
+
+
+
     $print = '
         <link rel="stylesheet" href="src/style.css">
         <div style="margin: 0px 150px;">
@@ -325,6 +381,39 @@ if(isset($_POST['cetak-spt'])){
             </table>
         </div>';
 } else if (isset($_POST['cetak-nota'])){
+
+    $nomor = $_POST["nomor"];
+    $yth = $_POST["yth"];
+    $dari = $_POST["dari"];
+    $hal = $_POST["hal"];
+    $tanggal = $_POST["tanggal"];
+    $tembusan = $_POST["tembusan"];
+    $tugas = $_POST["tugas"];
+    $lokasi = $_POST["lokasi"];
+    $selama = $_POST["selama"];
+    $tanggalBerangkat = $_POST["tanggal-berangkat"];
+    $tanggalKembali = $_POST["tanggal-kembali"];
+    $sumberDana = $_POST["sumber-dana"];
+    $nama = $_POST["nama"];
+    $nip = $_POST["nip"];
+    $pangkat = $_POST["pangkat"];
+    $jabatan = $_POST["jabatan"];
+    $nama2 = $_POST["nama2"];
+    $nip2 = $_POST["nip2"];
+    $pangkat2 = $_POST["pangkat2"];
+    $jabatan2 = $_POST["jabatan2"];
+    $nama3 = $_POST["nama3"];
+    $nip3 = $_POST["nip3"];
+    $pangkat3 = $_POST["pangkat3"];
+    $jabatan3 = $_POST["jabatan3"];
+
+    $query = "INSERT INTO nota VALUES('','$nomor','$yth','$dari','$hal','$tanggal','$tembusan','$tugas','$lokasi','$selama','$tanggalBerangkat','$tanggalKembali','$sumberDana','$nama','$nip','$pangkat','$jabatan','$nama2','$nip2','$pangkat2','$jabatan2','$nama3','$nip3','$pangkat3','$jabatan3')";
+
+    mysqli_query($conn, $query);
+
+
+
+
     $print = '<link rel="stylesheet" href="src/style.css">
     <body style="padding:0px 150px">
         <table>

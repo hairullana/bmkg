@@ -83,7 +83,7 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
         </div>
         <div class="mb-3">
             <label for="gol1" class="form-label">Pangkat/ Golongan</label>
-            <input required type="text" class="form-control" id="gol1" placeholder="Pangkat/Golongan">
+            <input required name="gol1" type="text" class="form-control" id="gol1" placeholder="Pangkat/Golongan">
         </div>
         <div class="mb-3">
             <label for="jabatan1" class="form-label">Jabatan</label>
