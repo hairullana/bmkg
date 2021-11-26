@@ -47,7 +47,7 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
 
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-12">
           <div class="mb-3">
               <label for="periode-tanggal" class="form-label header-secondary">Masukan Periode Tanggal</label>
               <input required type="text" class="form-control" id="periode-tanggal" name="periode-tanggal" placeholder="Periode Kegiatan">
@@ -136,8 +136,14 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
             </div>
         </div>
     
-        <a href="index.php" class="btn btn-danger tambah" type="submit">Kembali</a>
-        <button class="btn btn-warning tambah" type="submit" name="cetak-laporan">Cetak Laporan</button>
+        <div class="col">
+          <div class="row justify-content-center">
+            <div class="col">
+              <a href="index.php" class="btn btn-danger tambah" type="submit">Kembali</a>
+              <button class="btn btn-warning tambah" type="submit" name="cetak-laporan">Cetak Laporan</button>
+            </div>
+          </div>
+        </div>
       </div>
       
     </form>
