@@ -44,96 +44,102 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
     <p class="header-tambah">Laporan Akhir</p>
 
     <form action="print.php" method="post" enctype="multipart/form-data">
-      
-      <div class="mb-3">
-          <label for="periode-tanggal" class="form-label header-secondary">Masukan Periode Tanggal</label>
-          <input required type="text" class="form-control" id="periode-tanggal" name="periode-tanggal" placeholder="Periode Kegiatan">
-      </div>
-  
-      <p class="header-secondary">Kegiatan</p>
-      <div class="form-floating">
-          <textarea name="judul-kegiatan" required class="form-control" placeholder="Leave a comment here" id="judul-kegiatan" style="height: 100px"></textarea>
-          <label for="judul-kegiatan">Judul Kegiatan</label>
-      </div>
-  
-      <p class="header-secondary">Pendahuluan</p>
-      <div class="form-floating">
-          <textarea name="pendahuluan" required class="form-control" placeholder="Leave a comment here" id="pendahuluan" style="height: 200px"></textarea>
-          <label for="pendahuluan">Pendahuluan</label>
-      </div>
-  
-      <p class="header-secondary">PELAKSANA/ PESERTA</p>
-      <div class="form-floating">
-          <textarea name="pelaksana" required class="form-control" placeholder="Leave a comment here" id="pelaksana" style="height: 100px"></textarea>
-          <label for="pelaksana">PELAKSANA/ PESERTA</label>
-      </div>
-  
-  
-      <p class="header-secondary">DASAR KEGIATAN</p>
-      <div class="form-floating">
-          <textarea name="dasar-kegiatan" required class="form-control" placeholder="Leave a comment here" id="dasar-kegiatan" style="height: 100px"></textarea>
-          <label for="dasar-kegiatan">DASAR KEGIATAN</label>
-      </div>
-  
-  
-      <p class="header-secondary">LOKASI </p>
-      <div class="form-floating">
-          <textarea name="lokasi" required class="form-control" placeholder="Leave a comment here" id="lokasi" style="height: 100px"></textarea>
-          <label for="lokasi">LOKASI </label>
-      </div>
-  
-      <p class="header-secondary">LINGKUP KEGIATAN </p>
-      <div class="form-floating">
-          <textarea name="lingkup-kegiatan" required class="form-control" placeholder="Leave a comment here" id="lingkup-kegiatan" style="height: 400px"></textarea>
-          <label for="lingkup-kegiatan">LINGKUP KEGIATAN </label>
-      </div>
-  
-  
-      <p class="header-secondary">Hasil</p>
-      <div class="form-floating">
-          <textarea name="hasil" required class="form-control" placeholder="Leave a comment here" id="hasil" style="height: 200px"></textarea>
-          <label for="hasil">HASIL</label>
-      </div>
-  
-      <p class="header-secondary">REKOMENDASI</p>
-      <div class="form-floating">
-          <textarea name="rekomendasi" required class="form-control" placeholder="Leave a comment here" id="rekomendasi" style="height: 200px"></textarea>
-          <label for="rekomendasi">REKOMENDASI</label>
-      </div>
-      
-  
-      <div class="input-group mb-3" style="margin-top: 20px;">
-          <input type="file" name="foto" id="foto" class="form-control">
-      </div>
 
-      <p class="header-secondary">Keterangan Foto</p>
-      <div class="form-floating">
-          <textarea name="keterangan-foto" required class="form-control" placeholder="Leave a comment here" id="keterangan-foto" style="height: 200px"></textarea>
-          <label for="keterangan-foto">Keterangan Foto</label>
-      </div>
+      <div class="row">
 
-      <div class="mb-3">
-          <label for="penyusunLaporan1" class="form-label header-secondary">Penyusun Laporan</label>
-
-          <!-- Input Penyusun Laporan -->
-          <div class="row">
-            <!-- Penyusun 1 -->
-            <div class="col-4">
-              <input required type="text" class="form-control" id="penyusunLaporan1" name="penyusunLaporan1" placeholder="Nama Penyusun Laporan 1">
-            </div>
-            <!-- Penyusun 2 -->
-            <div class="col-4">
-              <input required type="text" class="form-control" id="penyusunLaporan2" name="penyusunLaporan2" placeholder="Nama Penyusun Laporan 2">
-            </div>
-            <!-- Penyusun 3 -->
-            <div class="col-4">
-              <input required type="text" class="form-control" id="penyusunLaporan3" name="penyusunLaporan3" placeholder="Nama Penyusun Laporan 3">
-            </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+              <label for="periode-tanggal" class="form-label header-secondary">Masukan Periode Tanggal</label>
+              <input required type="text" class="form-control" id="periode-tanggal" name="periode-tanggal" placeholder="Periode Kegiatan">
           </div>
-      </div>
+        </div>
+    
+        <p class="header-secondary">Kegiatan</p>
+        <div class="form-floating">
+            <textarea name="judul-kegiatan" required class="form-control" placeholder="Leave a comment here" id="judul-kegiatan" style="height: 100px"></textarea>
+            <label for="judul-kegiatan">Judul Kegiatan</label>
+        </div>
+    
+        <p class="header-secondary">Pendahuluan</p>
+        <div class="form-floating">
+            <textarea name="pendahuluan" required class="form-control" placeholder="Leave a comment here" id="pendahuluan" style="height: 200px"></textarea>
+            <label for="pendahuluan">Pendahuluan</label>
+        </div>
+    
+        <p class="header-secondary">PELAKSANA/ PESERTA</p>
+        <div class="form-floating">
+            <textarea name="pelaksana" required class="form-control" placeholder="Leave a comment here" id="pelaksana" style="height: 100px"></textarea>
+            <label for="pelaksana">PELAKSANA/ PESERTA</label>
+        </div>
+    
+    
+        <p class="header-secondary">DASAR KEGIATAN</p>
+        <div class="form-floating">
+            <textarea name="dasar-kegiatan" required class="form-control" placeholder="Leave a comment here" id="dasar-kegiatan" style="height: 100px"></textarea>
+            <label for="dasar-kegiatan">DASAR KEGIATAN</label>
+        </div>
+    
+    
+        <p class="header-secondary">LOKASI </p>
+        <div class="form-floating">
+            <textarea name="lokasi" required class="form-control" placeholder="Leave a comment here" id="lokasi" style="height: 100px"></textarea>
+            <label for="lokasi">LOKASI </label>
+        </div>
+    
+        <p class="header-secondary">LINGKUP KEGIATAN </p>
+        <div class="form-floating">
+            <textarea name="lingkup-kegiatan" required class="form-control" placeholder="Leave a comment here" id="lingkup-kegiatan" style="height: 400px"></textarea>
+            <label for="lingkup-kegiatan">LINGKUP KEGIATAN </label>
+        </div>
+    
+    
+        <p class="header-secondary">Hasil</p>
+        <div class="form-floating">
+            <textarea name="hasil" required class="form-control" placeholder="Leave a comment here" id="hasil" style="height: 200px"></textarea>
+            <label for="hasil">HASIL</label>
+        </div>
+    
+        <p class="header-secondary">REKOMENDASI</p>
+        <div class="form-floating">
+            <textarea name="rekomendasi" required class="form-control" placeholder="Leave a comment here" id="rekomendasi" style="height: 200px"></textarea>
+            <label for="rekomendasi">REKOMENDASI</label>
+        </div>
+        
+    
+        <div class="input-group mb-3" style="margin-top: 20px;">
+            <input type="file" name="foto" id="foto" class="form-control">
+        </div>
   
-      <a href="index.php" class="btn btn-danger tambah" type="submit">Kembali</a>
-      <button class="btn btn-warning tambah" type="submit" name="cetak-laporan">Cetak Laporan</button>
+        <p class="header-secondary">Keterangan Foto</p>
+        <div class="form-floating">
+            <textarea name="keterangan-foto" required class="form-control" placeholder="Leave a comment here" id="keterangan-foto" style="height: 200px"></textarea>
+            <label for="keterangan-foto">Keterangan Foto</label>
+        </div>
+  
+        <div class="mb-3">
+            <label for="penyusunLaporan1" class="form-label header-secondary">Penyusun Laporan</label>
+  
+            <!-- Input Penyusun Laporan -->
+            <div class="row">
+              <!-- Penyusun 1 -->
+              <div class="col-4">
+                <input required type="text" class="form-control" id="penyusunLaporan1" name="penyusunLaporan1" placeholder="Nama Penyusun Laporan 1">
+              </div>
+              <!-- Penyusun 2 -->
+              <div class="col-4">
+                <input required type="text" class="form-control" id="penyusunLaporan2" name="penyusunLaporan2" placeholder="Nama Penyusun Laporan 2">
+              </div>
+              <!-- Penyusun 3 -->
+              <div class="col-4">
+                <input required type="text" class="form-control" id="penyusunLaporan3" name="penyusunLaporan3" placeholder="Nama Penyusun Laporan 3">
+              </div>
+            </div>
+        </div>
+    
+        <a href="index.php" class="btn btn-danger tambah" type="submit">Kembali</a>
+        <button class="btn btn-warning tambah" type="submit" name="cetak-laporan">Cetak Laporan</button>
+      </div>
+      
     </form>
     
 </div>
