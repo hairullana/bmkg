@@ -67,14 +67,14 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'lab'){
                     <input required name="tanggal" type="text" class="form-control" id="tanggal" placeholder="Tanggal">
                 </div>
                 <div class="mb-3">
-                    <label for="tembusan" class="form-label">Tembusan</label>
-                    <input required name="tembusan" type="text" class="form-control" id="tembusan" placeholder="Tembusan">
+                  <label for="tembusan">Tembusan</label>
+                  <textarea name="tembusan" required class="form-control" placeholder="Tembusan" id="tembusan" style="height: 100px"></textarea>
                 </div>
             
                 <p class="header-secondary">1</p>
                 <div class="mb-3">
-                    <label for="tugas" class="form-label">Tugas</label>
-                    <input required name="tugas" type="text" class="form-control" id="tugas" placeholder="Tugas">
+                  <label for="tugas">Tugas</label>
+                  <textarea name="tugas" required class="form-control" placeholder="Tugas" id="tugas" style="height: 100px"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="lokasi" class="form-label">lokasi</label>
@@ -91,7 +91,7 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'lab'){
                 
                 <div class="mb-3">
                     <label for="tanggal-kembali" class="form-label">Tanggal Kembali</label>
-                    <input required name="tanggal-kembali" type="text" class="form-control" id="tanggal-kembali" placeholder="Tanggal Kembalu">
+                    <input required name="tanggal-kembali" type="text" class="form-control" id="tanggal-kembali" placeholder="Tanggal Kembali">
                 </div>
                 <div class="mb-3">
                     <label for="sumber-dana" class="form-label">Sumber Dana</label>
@@ -147,8 +147,7 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'lab'){
                     <label for="jabatan3" class="form-label">Jabatan </label>
                     <input required name="jabatan3" type="text" class="form-control" id="jabatan3" placeholder="Jabatan">
                 </div>
-            
-               
+
                 <a href="index.php" class="btn btn-danger tambah" type="submit">Kembali</a>
                 <button class="btn btn-warning tambah" type="submit" name="cetak-nota">Cetak Laporan</button>
             </form>

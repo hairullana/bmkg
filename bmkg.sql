@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 05:02 AM
+-- Generation Time: Nov 20, 2021 at 03:43 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.16
 
@@ -38,16 +38,16 @@ CREATE TABLE `data_bmkg` (
   `kondisi` varchar(64) NOT NULL,
   `tanggal_update` date NOT NULL,
   `tanggal_pelaksanaan` date NOT NULL,
-  `petugas` varchar(64) NOT NULL
+  `kalibrasi_end` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `data_bmkg`
 --
 
-INSERT INTO `data_bmkg` (`id`, `pegawai`, `jumlah_peralatan`, `provinsi`, `jenis_alat`, `nama_alat`, `lokasi`, `kondisi`, `tanggal_update`, `tanggal_pelaksanaan`, `petugas`) VALUES
-(1, 'Karel Mogi', 1, 'Bali', 'Sound System', 'Speaker A43', 'Jl. Ayani', 'Baik', '2021-11-07', '2021-11-10', 'Rivaldo'),
-(3, 'Bayu Anu', 3, 'Bali', 'Laptop', 'Laptop Asus 6432', 'Jl. Kedonganan', 'Baik', '2021-10-31', '2021-11-08', 'Suhar');
+INSERT INTO `data_bmkg` (`id`, `pegawai`, `jumlah_peralatan`, `provinsi`, `jenis_alat`, `nama_alat`, `lokasi`, `kondisi`, `tanggal_update`, `tanggal_pelaksanaan`, `kalibrasi_end`) VALUES
+(1, 'Karel Mogi', 1, 'Bali', 'Sound System', 'Speaker A43', 'Jl. Ayani', 'Baik', '2021-11-07', '2021-11-10', '27-11-2021'),
+(3, 'Bayu Anu', 3, 'Bali', 'Laptop', 'Laptop Asus 6432', 'Jl. Kedonganan', 'Baik', '2021-10-31', '2021-11-08', '23-11-2021');
 
 -- --------------------------------------------------------
 

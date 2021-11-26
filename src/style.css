@@ -85,12 +85,14 @@ main {
 
 .table {
   border: 2px solid black;
+  width: 100%;
+  /* table-layout: fixed; */
 }
 .table .thumbnail{
-    margin: 0;
+  margin: 0;
 }
 .nw {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .panel-heading {
@@ -144,6 +146,15 @@ footer p {
   text-align: center;
 }
 
-td{
-  padding: 0px 10px
+.table-responsive {
+  word-wrap: break-word;         /* All browsers since IE 5.5+ */
+  overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+  width: 100%;
+}
+
+table td{
+  padding: 0px 10px;
+  word-wrap: break-word;         /* All browsers since IE 5.5+ */
+  overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+  vertical-align: top;
 }

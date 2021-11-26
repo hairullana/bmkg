@@ -111,6 +111,26 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
           <textarea name="keterangan-foto" required class="form-control" placeholder="Leave a comment here" id="keterangan-foto" style="height: 200px"></textarea>
           <label for="keterangan-foto">Keterangan Foto</label>
       </div>
+
+      <div class="mb-3">
+          <label for="penyusunLaporan1" class="form-label header-secondary">Penyusun Laporan</label>
+
+          <!-- Input Penyusun Laporan -->
+          <div class="row">
+            <!-- Penyusun 1 -->
+            <div class="col-4">
+              <input required type="text" class="form-control" id="penyusunLaporan1" name="penyusunLaporan1" placeholder="Nama Penyusun Laporan 1">
+            </div>
+            <!-- Penyusun 2 -->
+            <div class="col-4">
+              <input required type="text" class="form-control" id="penyusunLaporan2" name="penyusunLaporan2" placeholder="Nama Penyusun Laporan 2">
+            </div>
+            <!-- Penyusun 3 -->
+            <div class="col-4">
+              <input required type="text" class="form-control" id="penyusunLaporan3" name="penyusunLaporan3" placeholder="Nama Penyusun Laporan 3">
+            </div>
+          </div>
+      </div>
   
       <a href="index.php" class="btn btn-danger tambah" type="submit">Kembali</a>
       <button class="btn btn-warning tambah" type="submit" name="cetak-laporan">Cetak Laporan</button>

@@ -24,7 +24,7 @@ if(isset($_POST["search"])){
   if($_SESSION["role"] == "tu"){
     $result = mysqli_query($conn, "SELECT * FROM data_bmkg WHERE pegawai LIKE '%$keyword%'");
   }else if($_SESSION["role"] == "lab"){
-    $result = mysqli_query($conn, "SELECT * FROM data_bmkg WHERE nama_alat LIKE '%$keyword%'");
+    $result = mysqli_query($conn, "SELECT * FROM data_bmkg WHERE nama_alat LIKE '%$keyword%' OR kalibrasi_end LIKE '%$keyword%' or kondisi LIKE '%$keyword%'");
   }else {
     $result = mysqli_query($conn, "SELECT * FROM data_bmkg WHERE pegawai LIKE '%$keyword%' OR nama_alat LIKE '%$keyword%'");
   }
@@ -94,379 +94,12 @@ if(isset($_POST["search"])){
             </div>
         </div>
 
-
-
-
-
-        <?php if($_SESSION['role'] == "admin") :  ?>
-
-        <!-- SPT -->
-        <div class="my-3">
-          <h3>Data SPT</h3>
-          <table class="table table-bordered table-hover table-striped">
-            <thead>
-                <tr class="nw">
-                    <th>No</th>
-                    <th>No Tugas</th>
-                    <th>Nama</th>
-                    <th>NIP</th>
-                    <th>Golongan</th>
-                    <th>Print</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            $i = 1; 
-            $spt = mysqli_query($conn, 'SELECT * FROM spt');
-            ?>
-            <?php foreach ($spt as $data) : ?>
-              <tr class="nw">
-                <td><?= $i++; ?></td>
-                <td><?= $data["no-tugas"] ?></td>
-                <td><?= $data["nama"] ?></td>
-                <td><?= $data["nip"] ?></td>
-                <td><?= $data["gol"] ?></td>
-                <td>
-                  <form action="print.php" method="post">
-                    <input type="hidden" name="no-tugas" value="<?= $data['no-tugas'] ?>">
-                    <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
-                    <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
-                    <input type="hidden" name="gol" value="<?= $data['gol'] ?>">
-                    <input type="hidden" name="jabatan-utama" value="<?= $data['jabatan-utama'] ?>">
-                    <input type="hidden" name="unit-kerja" value="<?= $data['unit-kerja'] ?>">
-                    <input type="hidden" name="nama1" value="<?= $data['nama1'] ?>">
-                    <input type="hidden" name="nip1" value="<?= $data['nip1'] ?>">
-                    <input type="hidden" name="gol1" value="<?= $data['gol1'] ?>">
-                    <input type="hidden" name="jabatan1" value="<?= $data['jabatan1'] ?>">
-                    <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
-                    <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
-                    <input type="hidden" name="gol2" value="<?= $data['gol2'] ?>">
-                    <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
-                    <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
-                    <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
-                    <input type="hidden" name="lama" value="<?= $data['lama'] ?>">
-                    <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
-                    <input type="hidden" name="dana" value="<?= $data['dana'] ?>">
-                    <input type="hidden" name="dont-save-db" value="0">
-                    
-                    <button class="btn btn-primary" type="submit" name="cetak-spt">Cetak</button>
-                  </form>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-            </tbody>
-
-            </table>
-        </div>
-        
-
-
-
-
-        <!-- NOTA -->
-        <div class="my-3">
-          <h3>Data NOTA DINAS</h3>
-          <table class="table table-bordered table-hover table-striped">
-            <thead>
-                <tr class="nw">
-                    <th>No</th>
-                    <th>No Nota</th>
-                    <th>Hal</th>
-                    <th>Tanggal</th>
-                    <th>Tembusan</th>
-                    <th>Print</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            $i = 1; 
-            $nota = mysqli_query($conn, 'SELECT * FROM nota');
-            ?>
-            <?php foreach ($nota as $data) : ?>
-              <tr class="nw">
-                <td><?= $i++; ?></td>
-                <td><?= $data["nomor"] ?></td>
-                <td><?= $data["hal"] ?></td>
-                <td><?= $data["tanggal"] ?></td>
-                <td><?= $data["tembusan"] ?></td>
-                <td>
-                  <form action="print.php" method="post">
-                    <input type="hidden" name="nomor" value="<?= $data['nomor'] ?>">
-                    <input type="hidden" name="yth" value="<?= $data['yth'] ?>">
-                    <input type="hidden" name="dari" value="<?= $data['dari'] ?>">
-                    <input type="hidden" name="hal" value="<?= $data['hal'] ?>">
-                    <input type="hidden" name="tembusan" value="<?= $data['tembusan'] ?>">
-                    <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
-                    <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
-                    <input type="hidden" name="selama" value="<?= $data['selama'] ?>">
-                    <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
-                    <input type="hidden" name="tanggal-kembali" value="<?= $data['tanggal-kembali'] ?>">
-                    <input type="hidden" name="sumber-dana" value="<?= $data['sumber-dana'] ?>">
-                    <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
-                    <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
-                    <input type="hidden" name="pangkat" value="<?= $data['pangkat'] ?>">
-                    <input type="hidden" name="jabatan" value="<?= $data['jabatan'] ?>">
-                    <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
-                    <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
-                    <input type="hidden" name="pangkat2" value="<?= $data['pangkat2'] ?>">
-                    <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
-                    <input type="hidden" name="nama3" value="<?= $data['nama3'] ?>">
-                    <input type="hidden" name="nip3" value="<?= $data['nip3'] ?>">
-                    <input type="hidden" name="pangkat3" value="<?= $data['pangkat3'] ?>">
-                    <input type="hidden" name="jabatan3" value="<?= $data['jabatan3'] ?>">
-                    <input type="hidden" name="dont-save-db" value="0">
-                    
-                    <button class="btn btn-primary" type="submit" name="cetak-nota">Cetak</button>
-                  </form>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-            </tbody>
-
-            </table>
-        </div>
-
-
-
-
-        <!-- LAPORAN -->
-        <div class="my-3">
-          <h3>Data LAPORAN AKHIR</h3>
-          <table class="table table-bordered table-hover table-striped">
-            <thead>
-                <tr class="nw">
-                    <th>No</th>
-                    <th>Periode Tanggal</th>
-                    <th>Kegiatan</th>
-                    <th>Lokasi</th>
-                    <th>Print</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            $i = 1; 
-            $laporan = mysqli_query($conn, 'SELECT * FROM laporan');
-            ?>
-            <?php foreach ($laporan as $data) : ?>
-              <tr class="nw">
-                <td><?= $i++; ?></td>
-                <td><?= $data["periode-tanggal"] ?></td>
-                <td><?= $data["judul-kegiatan"] ?></td>
-                <td><?= $data["lokasi"] ?></td>
-                <td>
-                  <form action="print.php" method="post">
-                    <input type="hidden" name="periode-tanggal" value="<?= $data['periode-tanggal'] ?>">
-                    <input type="hidden" name="judul-kegiatan" value="<?= $data['judul-kegiatan'] ?>">
-                    <input type="hidden" name="pendahuluan" value="<?= $data['pendahuluan'] ?>">
-                    <input type="hidden" name="pelaksana" value="<?= $data['pelaksana'] ?>">
-                    <input type="hidden" name="dasar-kegiatan" value="<?= $data['dasar-kegiatan'] ?>">
-                    <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
-                    <input type="hidden" name="lingkup-kegiatan" value="<?= $data['lingkup-kegiatan'] ?>">
-                    <input type="hidden" name="hasil" value="<?= $data['hasil'] ?>">
-                    <input type="hidden" name="rekomendasi" value="<?= $data['rekomendasi'] ?>">
-                    <input type="hidden" name="foto" value="<?= $data['foto'] ?>">
-                    <input type="hidden" name="keterangan-foto" value="<?= $data['keterangan-foto'] ?>">
-                    <input type="hidden" name="dont-save-db" value="0">
-                    
-                    <button class="btn btn-primary" type="submit" name="cetak-laporan">Cetak</button>
-                  </form>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-            </tbody>
-
-            </table>
-        </div>
-
-        <?php elseif($_SESSION['role'] == "tu") : ?>
-          <!-- SPT -->
-        <div class="my-3">
-          <h3>Data SPT</h3>
-          <table class="table table-bordered table-hover table-striped">
-            <thead>
-                <tr class="nw">
-                    <th>No</th>
-                    <th>No Tugas</th>
-                    <th>Nama</th>
-                    <th>NIP</th>
-                    <th>Golongan</th>
-                    <th>Print</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            $i = 1; 
-            $spt = mysqli_query($conn, 'SELECT * FROM spt');
-            ?>
-            <?php foreach ($spt as $data) : ?>
-              <tr class="nw">
-                <td><?= $i++; ?></td>
-                <td><?= $data["no-tugas"] ?></td>
-                <td><?= $data["nama"] ?></td>
-                <td><?= $data["nip"] ?></td>
-                <td><?= $data["gol"] ?></td>
-                <td>
-                  <form action="print.php" method="post">
-                    <input type="hidden" name="no-tugas" value="<?= $data['no-tugas'] ?>">
-                    <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
-                    <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
-                    <input type="hidden" name="gol" value="<?= $data['gol'] ?>">
-                    <input type="hidden" name="jabatan-utama" value="<?= $data['jabatan-utama'] ?>">
-                    <input type="hidden" name="unit-kerja" value="<?= $data['unit-kerja'] ?>">
-                    <input type="hidden" name="nama1" value="<?= $data['nama1'] ?>">
-                    <input type="hidden" name="nip1" value="<?= $data['nip1'] ?>">
-                    <input type="hidden" name="gol1" value="<?= $data['gol1'] ?>">
-                    <input type="hidden" name="jabatan1" value="<?= $data['jabatan1'] ?>">
-                    <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
-                    <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
-                    <input type="hidden" name="gol2" value="<?= $data['gol2'] ?>">
-                    <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
-                    <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
-                    <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
-                    <input type="hidden" name="lama" value="<?= $data['lama'] ?>">
-                    <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
-                    <input type="hidden" name="dana" value="<?= $data['dana'] ?>">
-                    <input type="hidden" name="dont-save-db" value="0">
-                    
-                    <button class="btn btn-primary" type="submit" name="cetak-spt">Cetak</button>
-                  </form>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-            </tbody>
-
-            </table>
-        </div>
-
-        <!-- LAPORAN -->
-        <div class="my-3">
-          <h3>Data LAPORAN AKHIR</h3>
-          <table class="table table-bordered table-hover table-striped">
-            <thead>
-                <tr class="nw">
-                    <th>No</th>
-                    <th>Periode Tanggal</th>
-                    <th>Kegiatan</th>
-                    <th>Lokasi</th>
-                    <th>Print</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            $i = 1; 
-            $laporan = mysqli_query($conn, 'SELECT * FROM laporan');
-            ?>
-            <?php foreach ($laporan as $data) : ?>
-              <tr class="nw">
-                <td><?= $i++; ?></td>
-                <td><?= $data["periode-tanggal"] ?></td>
-                <td><?= $data["judul-kegiatan"] ?></td>
-                <td><?= $data["lokasi"] ?></td>
-                <td>
-                  <form action="print.php" method="post">
-                    <input type="hidden" name="periode-tanggal" value="<?= $data['periode-tanggal'] ?>">
-                    <input type="hidden" name="judul-kegiatan" value="<?= $data['judul-kegiatan'] ?>">
-                    <input type="hidden" name="pendahuluan" value="<?= $data['pendahuluan'] ?>">
-                    <input type="hidden" name="pelaksana" value="<?= $data['pelaksana'] ?>">
-                    <input type="hidden" name="dasar-kegiatan" value="<?= $data['dasar-kegiatan'] ?>">
-                    <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
-                    <input type="hidden" name="lingkup-kegiatan" value="<?= $data['lingkup-kegiatan'] ?>">
-                    <input type="hidden" name="hasil" value="<?= $data['hasil'] ?>">
-                    <input type="hidden" name="rekomendasi" value="<?= $data['rekomendasi'] ?>">
-                    <input type="hidden" name="foto" value="<?= $data['foto'] ?>">
-                    <input type="hidden" name="keterangan-foto" value="<?= $data['keterangan-foto'] ?>">
-                    <input type="hidden" name="dont-save-db" value="0">
-                    
-                    <button class="btn btn-primary" type="submit" name="cetak-laporan">Cetak</button>
-                  </form>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-            </tbody>
-
-            </table>
-        </div>
-
-        <?php else : ?>
-
-          <!-- NOTA -->
-        <div class="my-3">
-          <h3>Data NOTA DINAS</h3>
-          <table class="table table-bordered table-hover table-striped">
-            <thead>
-                <tr class="nw">
-                    <th>No</th>
-                    <th>No Nota</th>
-                    <th>Hal</th>
-                    <th>Tanggal</th>
-                    <th>Tembusan</th>
-                    <th>Print</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            $i = 1; 
-            $nota = mysqli_query($conn, 'SELECT * FROM nota');
-            ?>
-            <?php foreach ($nota as $data) : ?>
-              <tr class="nw">
-                <td><?= $i++; ?></td>
-                <td><?= $data["nomor"] ?></td>
-                <td><?= $data["hal"] ?></td>
-                <td><?= $data["tanggal"] ?></td>
-                <td><?= $data["tembusan"] ?></td>
-                <td>
-                  <form action="print.php" method="post">
-                    <input type="hidden" name="nomor" value="<?= $data['nomor'] ?>">
-                    <input type="hidden" name="yth" value="<?= $data['yth'] ?>">
-                    <input type="hidden" name="dari" value="<?= $data['dari'] ?>">
-                    <input type="hidden" name="hal" value="<?= $data['hal'] ?>">
-                    <input type="hidden" name="tembusan" value="<?= $data['tembusan'] ?>">
-                    <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
-                    <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
-                    <input type="hidden" name="selama" value="<?= $data['selama'] ?>">
-                    <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
-                    <input type="hidden" name="tanggal-kembali" value="<?= $data['tanggal-kembali'] ?>">
-                    <input type="hidden" name="sumber-dana" value="<?= $data['sumber-dana'] ?>">
-                    <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
-                    <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
-                    <input type="hidden" name="pangkat" value="<?= $data['pangkat'] ?>">
-                    <input type="hidden" name="jabatan" value="<?= $data['jabatan'] ?>">
-                    <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
-                    <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
-                    <input type="hidden" name="pangkat2" value="<?= $data['pangkat2'] ?>">
-                    <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
-                    <input type="hidden" name="nama3" value="<?= $data['nama3'] ?>">
-                    <input type="hidden" name="nip3" value="<?= $data['nip3'] ?>">
-                    <input type="hidden" name="pangkat3" value="<?= $data['pangkat3'] ?>">
-                    <input type="hidden" name="jabatan3" value="<?= $data['jabatan3'] ?>">
-                    <input type="hidden" name="dont-save-db" value="0">
-                    
-                    <button class="btn btn-primary" type="submit" name="cetak-nota">Cetak</button>
-                  </form>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-            </tbody>
-
-            </table>
-        </div>
-        <?php endif; ?>
-        
-
-
         <!-- DATA LAIN -->
         <div class="table-responsive my-3">
           <h3>DATA ALAT</h3>
-            <table class="table table-bordered table-hover table-striped">
+          <table class="table table-bordered table-hover table-striped">
             <thead>
-                <tr class="nw">
+                <tr>
                     <th>No</th>
                     <th>ID</th>
                     <th>Nama Pegawai</th>
@@ -478,7 +111,7 @@ if(isset($_POST["search"])){
                     <th>Kondisi</th>
                     <th>Tanggal Update Terakhir</th>
                     <th>Tanggal Pelaksanaan Kalibrasi Start</th>
-                    <th>Petugas Kalibrasi End</th>
+                    <th>Kalibrasi End</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -486,19 +119,19 @@ if(isset($_POST["search"])){
 
             <?php $i = 1; ?>
             <?php foreach ($result as $data) : ?>
-              <tr class="nw">
+              <tr>
                 <td><?= $i++; ?></td>
-                <td><?= $data["id"] ?></td>
-                <td><?= $data["pegawai"] ?></td>
-                <td><?= $data["jumlah_peralatan"] ?></td>
-                <td><?= $data["provinsi"] ?></td>
-                <td><?= $data["jenis_alat"] ?></td>
-                <td><?= $data["nama_alat"] ?></td>
-                <td><?= $data["lokasi"] ?></td>
-                <td><?= $data["kondisi"] ?></td>
-                <td><?= $data["tanggal_update"] ?></td>
-                <td><?= $data["tanggal_pelaksanaan"] ?></td>
-                <td><?= $data["petugas"] ?></td>
+                <td><?= nl2br($data["id"]) ?></td>
+                <td><?= nl2br($data["pegawai"]) ?></td>
+                <td><?= nl2br($data["jumlah_peralatan"]) ?></td>
+                <td><?= nl2br($data["provinsi"]) ?></td>
+                <td><?= nl2br($data["jenis_alat"]) ?></td>
+                <td><?= nl2br($data["nama_alat"]) ?></td>
+                <td><?= nl2br($data["lokasi"]) ?></td>
+                <td><?= nl2br($data["kondisi"]) ?></td>
+                <td><?= nl2br($data["tanggal_update"]) ?></td>
+                <td><?= nl2br($data["tanggal_pelaksanaan"]) ?></td>
+                <td><?= nl2br($data["kalibrasi_end"]) ?></td>
                 <td>
                   <a href="edit.php?id=<?= $data['id'] ?>" type="button" class="btn btn-warning">Edit</a>
                   <a href="hapus.php?id=<?= $data['id'] ?>" type="button" class="btn btn-danger">Hapus</a>
@@ -513,8 +146,390 @@ if(isset($_POST["search"])){
             <?php endforeach; ?>
             </tbody>
 
+          </table>
+        </div>   
+    
+
+
+
+
+
+
+        <?php if($_SESSION['role'] == "admin") :  ?>
+
+          <!-- SPT -->
+          <div class="my-3 table-responsive">
+            <h3>Data SPT</h3>
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>No Tugas</th>
+                      <th>Nama</th>
+                      <th>NIP</th>
+                      <th>Golongan</th>
+                      <th>Print</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              <?php
+              $i = 1; 
+              $spt = mysqli_query($conn, "SELECT * FROM spt");
+              ?>
+              <?php foreach ($spt as $data) : ?>
+                <tr>
+                  <td><?= $i++; ?></td>
+                  <td><?= nl2br($data["no-tugas"]) ?></td>
+                  <td><?= nl2br($data["nama"]) ?></td>
+                  <td><?= nl2br($data["nip"]) ?></td>
+                  <td><?= nl2br($data["gol"]) ?></td>
+                  <td>
+                    <form action="print.php" method="post">
+                      <input type="hidden" name="no-tugas" value="<?= $data['no-tugas'] ?>">
+                      <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
+                      <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
+                      <input type="hidden" name="gol" value="<?= $data['gol'] ?>">
+                      <input type="hidden" name="jabatan-utama" value="<?= $data['jabatan-utama'] ?>">
+                      <input type="hidden" name="unit-kerja" value="<?= $data['unit-kerja'] ?>">
+                      <input type="hidden" name="nama1" value="<?= $data['nama1'] ?>">
+                      <input type="hidden" name="nip1" value="<?= $data['nip1'] ?>">
+                      <input type="hidden" name="gol1" value="<?= $data['gol1'] ?>">
+                      <input type="hidden" name="jabatan1" value="<?= $data['jabatan1'] ?>">
+                      <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
+                      <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
+                      <input type="hidden" name="gol2" value="<?= $data['gol2'] ?>">
+                      <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
+                      <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
+                      <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
+                      <input type="hidden" name="lama" value="<?= $data['lama'] ?>">
+                      <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
+                      <input type="hidden" name="dana" value="<?= $data['dana'] ?>">
+                      <input type="hidden" name="dont-save-db" value="0">
+                      
+                      <button class="btn btn-primary" type="submit" name="cetak-spt">Cetak</button>
+                    </form>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+              </tbody>
+
+              </table>
+          </div>
+
+          <!-- NOTA -->
+          <div class="my-3 table-responsive">
+            <h3>Data NOTA DINAS</h3>
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>No Nota</th>
+                      <th>Hal</th>
+                      <th>Tanggal</th>
+                      <th>Tembusan</th>
+                      <th>Print</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              <?php
+              $i = 1; 
+              $nota = mysqli_query($conn, "SELECT * FROM nota");
+              ?>
+              <?php foreach ($nota as $data) : ?>
+                <tr>
+                  <td><?= $i++; ?></td>
+                  <td><?= nl2br($data["nomor"]) ?></td>
+                  <td><?= nl2br($data["hal"]) ?></td>
+                  <td><?= nl2br($data["tanggal"]) ?></td>
+                  <td><?= nl2br($data["tembusan"]) ?></td>
+                  <td>
+                    <form action="print.php" method="post">
+                      <input type="hidden" name="nomor" value="<?= $data['nomor'] ?>">
+                      <input type="hidden" name="yth" value="<?= $data['yth'] ?>">
+                      <input type="hidden" name="dari" value="<?= $data['dari'] ?>">
+                      <input type="hidden" name="hal" value="<?= $data['hal'] ?>">
+                      <input type="hidden" name="tanggal" value="<?= $data['tanggal'] ?>">
+                      <input type="hidden" name="tembusan" value="<?= $data['tembusan'] ?>">
+                      <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
+                      <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
+                      <input type="hidden" name="selama" value="<?= $data['selama'] ?>">
+                      <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
+                      <input type="hidden" name="tanggal-kembali" value="<?= $data['tanggal-kembali'] ?>">
+                      <input type="hidden" name="sumber-dana" value="<?= $data['sumber-dana'] ?>">
+                      <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
+                      <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
+                      <input type="hidden" name="pangkat" value="<?= $data['pangkat'] ?>">
+                      <input type="hidden" name="jabatan" value="<?= $data['jabatan'] ?>">
+                      <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
+                      <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
+                      <input type="hidden" name="pangkat2" value="<?= $data['pangkat2'] ?>">
+                      <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
+                      <input type="hidden" name="nama3" value="<?= $data['nama3'] ?>">
+                      <input type="hidden" name="nip3" value="<?= $data['nip3'] ?>">
+                      <input type="hidden" name="pangkat3" value="<?= $data['pangkat3'] ?>">
+                      <input type="hidden" name="jabatan3" value="<?= $data['jabatan3'] ?>">
+                      <input type="hidden" name="dont-save-db" value="0">
+                      
+                      <button class="btn btn-primary" type="submit" name="cetak-nota">Cetak</button>
+                    </form>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+              </tbody>
+
+              </table>
+          </div>
+
+          <!-- LAPORAN -->
+          <div class="my-3 table-responsive">
+            <h3>Data LAPORAN AKHIR</h3>
+
+            <table class="table table-bordered table-hover table-striped">
+
+              <!-- THEAD -->
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Periode Tanggal</th>
+                  <th>Kegiatan</th>
+                  <th>Lokasi</th>
+                  <th>Print</th>
+                </tr>
+              </thead>
+
+              <!-- TBODY -->
+              <tbody>
+                <?php
+                $i = 1; 
+                $laporan = mysqli_query($conn, "SELECT * FROM laporan");
+                ?>
+                <?php foreach ($laporan as $data) : ?>
+                <tr>
+                  <td><?= $i++; ?></td>
+                  <td><?= nl2br($data["periode-tanggal"]) ?></td>
+                  <td><?= nl2br($data["judul-kegiatan"]) ?></td>
+                  <td><?= nl2br($data["lokasi"]) ?></td>
+                  <td>
+                    <form action="print.php" method="post">
+                      <input type="hidden" name="periode-tanggal" value="<?= $data['periode-tanggal'] ?>">
+                      <input type="hidden" name="judul-kegiatan" value="<?= $data['judul-kegiatan'] ?>">
+                      <input type="hidden" name="pendahuluan" value="<?= $data['pendahuluan'] ?>">
+                      <input type="hidden" name="pelaksana" value="<?= $data['pelaksana'] ?>">
+                      <input type="hidden" name="dasar-kegiatan" value="<?= $data['dasar-kegiatan'] ?>">
+                      <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
+                      <input type="hidden" name="lingkup-kegiatan" value="<?= $data['lingkup-kegiatan'] ?>">
+                      <input type="hidden" name="hasil" value="<?= $data['hasil'] ?>">
+                      <input type="hidden" name="rekomendasi" value="<?= $data['rekomendasi'] ?>">
+                      <input type="hidden" name="foto" value="<?= $data['foto'] ?>">
+                      <input type="hidden" name="keterangan-foto" value="<?= $data['keterangan-foto'] ?>">
+                      <input type="hidden" name="penyusunLaporan1" value="<?= $data['penyusunLaporan1'] ?>">
+                      <input type="hidden" name="penyusunLaporan2" value="<?= $data['penyusunLaporan2'] ?>">
+                      <input type="hidden" name="penyusunLaporan3" value="<?= $data['penyusunLaporan3'] ?>">
+                      <input type="hidden" name="dont-save-db" value="0">
+                      
+                      <button class="btn btn-primary" type="submit" name="cetak-laporan">Cetak</button>
+                    </form>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+
             </table>
-    </div>        
+          </div>
+
+        <?php elseif($_SESSION['role'] == "tu") : ?>
+
+          <!-- SPT -->
+          <div class="my-3 table-responsive">
+            <h3>Data SPT</h3>
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>No Tugas</th>
+                      <th>Nama</th>
+                      <th>NIP</th>
+                      <th>Golongan</th>
+                      <th>Print</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              <?php
+              $i = 1; 
+              $spt = mysqli_query($conn, "SELECT * FROM spt");
+              ?>
+              <?php foreach ($spt as $data) : ?>
+                <tr>
+                  <td><?= $i++; ?></td>
+                  <td><?= nl2br($data["no-tugas"]) ?></td>
+                  <td><?= nl2br($data["nama"]) ?></td>
+                  <td><?= nl2br($data["nip"]) ?></td>
+                  <td><?= nl2br($data["gol"]) ?></td>
+                  <td>
+                    <form action="print.php" method="post">
+                      <input type="hidden" name="no-tugas" value="<?= $data['no-tugas'] ?>">
+                      <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
+                      <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
+                      <input type="hidden" name="gol" value="<?= $data['gol'] ?>">
+                      <input type="hidden" name="jabatan-utama" value="<?= $data['jabatan-utama'] ?>">
+                      <input type="hidden" name="unit-kerja" value="<?= $data['unit-kerja'] ?>">
+                      <input type="hidden" name="nama1" value="<?= $data['nama1'] ?>">
+                      <input type="hidden" name="nip1" value="<?= $data['nip1'] ?>">
+                      <input type="hidden" name="gol1" value="<?= $data['gol1'] ?>">
+                      <input type="hidden" name="jabatan1" value="<?= $data['jabatan1'] ?>">
+                      <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
+                      <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
+                      <input type="hidden" name="gol2" value="<?= $data['gol2'] ?>">
+                      <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
+                      <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
+                      <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
+                      <input type="hidden" name="lama" value="<?= $data['lama'] ?>">
+                      <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
+                      <input type="hidden" name="dana" value="<?= $data['dana'] ?>">
+                      <input type="hidden" name="dont-save-db" value="0">
+                      
+                      <button class="btn btn-primary" type="submit" name="cetak-spt">Cetak</button>
+                    </form>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+              </tbody>
+
+              </table>
+          </div>
+
+          <!-- LAPORAN -->
+          <div class="my-3 table-responsive">
+            <h3>Data LAPORAN AKHIR</h3>
+
+            <table class="table table-bordered table-hover table-striped">
+
+              <!-- THEAD -->
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Periode Tanggal</th>
+                  <th>Kegiatan</th>
+                  <th>Lokasi</th>
+                  <th>Print</th>
+                </tr>
+              </thead>
+
+              <!-- TBODY -->
+              <tbody>
+                <?php
+                $i = 1; 
+                $laporan = mysqli_query($conn, "SELECT * FROM laporan");
+                ?>
+                <?php foreach ($laporan as $data) : ?>
+                <tr>
+                  <td><?= $i++; ?></td>
+                  <td><?= nl2br($data["periode-tanggal"]) ?></td>
+                  <td><?= nl2br($data["judul-kegiatan"]) ?></td>
+                  <td><?= nl2br($data["lokasi"]) ?></td>
+                  <td>
+                    <form action="print.php" method="post">
+                      <input type="hidden" name="periode-tanggal" value="<?= $data['periode-tanggal'] ?>">
+                      <input type="hidden" name="judul-kegiatan" value="<?= $data['judul-kegiatan'] ?>">
+                      <input type="hidden" name="pendahuluan" value="<?= $data['pendahuluan'] ?>">
+                      <input type="hidden" name="pelaksana" value="<?= $data['pelaksana'] ?>">
+                      <input type="hidden" name="dasar-kegiatan" value="<?= $data['dasar-kegiatan'] ?>">
+                      <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
+                      <input type="hidden" name="lingkup-kegiatan" value="<?= $data['lingkup-kegiatan'] ?>">
+                      <input type="hidden" name="hasil" value="<?= $data['hasil'] ?>">
+                      <input type="hidden" name="rekomendasi" value="<?= $data['rekomendasi'] ?>">
+                      <input type="hidden" name="foto" value="<?= $data['foto'] ?>">
+                      <input type="hidden" name="keterangan-foto" value="<?= $data['keterangan-foto'] ?>">
+                      <input type="hidden" name="penyusunLaporan1" value="<?= $data['penyusunLaporan1'] ?>">
+                      <input type="hidden" name="penyusunLaporan2" value="<?= $data['penyusunLaporan2'] ?>">
+                      <input type="hidden" name="penyusunLaporan3" value="<?= $data['penyusunLaporan3'] ?>">
+                      <input type="hidden" name="dont-save-db" value="0">
+                      
+                      <button class="btn btn-primary" type="submit" name="cetak-laporan">Cetak</button>
+                    </form>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+
+            </table>
+          </div>
+
+        <?php else : ?>
+
+          <!-- NOTA -->
+          <div class="my-3 table-responsive">
+            <h3>Data NOTA DINAS</h3>
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>No Nota</th>
+                      <th>Hal</th>
+                      <th>Tanggal</th>
+                      <th>Tembusan</th>
+                      <th>Print</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              <?php
+              $i = 1; 
+              $nota = mysqli_query($conn, "SELECT * FROM nota");
+              ?>
+              <?php foreach ($nota as $data) : ?>
+                <tr>
+                  <td><?= $i++; ?></td>
+                  <td><?= nl2br($data["nomor"]) ?></td>
+                  <td><?= nl2br($data["hal"]) ?></td>
+                  <td><?= nl2br($data["tanggal"]) ?></td>
+                  <td><?= nl2br($data["tembusan"]) ?></td>
+                  <td>
+                    <form action="print.php" method="post">
+                      <input type="hidden" name="nomor" value="<?= $data['nomor'] ?>">
+                      <input type="hidden" name="yth" value="<?= $data['yth'] ?>">
+                      <input type="hidden" name="dari" value="<?= $data['dari'] ?>">
+                      <input type="hidden" name="hal" value="<?= $data['hal'] ?>">
+                      <input type="hidden" name="tanggal" value="<?= $data['tanggal'] ?>">
+                      <input type="hidden" name="tembusan" value="<?= $data['tembusan'] ?>">
+                      <input type="hidden" name="tugas" value="<?= $data['tugas'] ?>">
+                      <input type="hidden" name="lokasi" value="<?= $data['lokasi'] ?>">
+                      <input type="hidden" name="selama" value="<?= $data['selama'] ?>">
+                      <input type="hidden" name="tanggal-berangkat" value="<?= $data['tanggal-berangkat'] ?>">
+                      <input type="hidden" name="tanggal-kembali" value="<?= $data['tanggal-kembali'] ?>">
+                      <input type="hidden" name="sumber-dana" value="<?= $data['sumber-dana'] ?>">
+                      <input type="hidden" name="nama" value="<?= $data['nama'] ?>">
+                      <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
+                      <input type="hidden" name="pangkat" value="<?= $data['pangkat'] ?>">
+                      <input type="hidden" name="jabatan" value="<?= $data['jabatan'] ?>">
+                      <input type="hidden" name="nama2" value="<?= $data['nama2'] ?>">
+                      <input type="hidden" name="nip2" value="<?= $data['nip2'] ?>">
+                      <input type="hidden" name="pangkat2" value="<?= $data['pangkat2'] ?>">
+                      <input type="hidden" name="jabatan2" value="<?= $data['jabatan2'] ?>">
+                      <input type="hidden" name="nama3" value="<?= $data['nama3'] ?>">
+                      <input type="hidden" name="nip3" value="<?= $data['nip3'] ?>">
+                      <input type="hidden" name="pangkat3" value="<?= $data['pangkat3'] ?>">
+                      <input type="hidden" name="jabatan3" value="<?= $data['jabatan3'] ?>">
+                      <input type="hidden" name="dont-save-db" value="0">
+                      
+                      <button class="btn btn-primary" type="submit" name="cetak-nota">Cetak</button>
+                    </form>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+              </tbody>
+
+              </table>
+          </div>
+
+        <?php endif; ?>
+        
+
+
+            
     </div>
 </div>
 </main>
