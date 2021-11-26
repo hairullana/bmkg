@@ -283,7 +283,7 @@ if(isset($_POST['cetak-spt'])){
         $penyusunLaporan3 = $_POST["penyusunLaporan3"];
 
 
-        $query = "INSERT INTO laporan VALUES('', '$periodeTanggal', '$judulKegiatan', '$pendahuluan', '$pelaksana', '$dasarKegiatan', '$lokasi', '$lingkupKegiatan', '$hasil', '$rekomendasi', '$foto', '$keteranganFoto')";
+        $query = "INSERT INTO laporan VALUES('', '$periodeTanggal', '$judulKegiatan', '$pendahuluan', '$pelaksana', '$dasarKegiatan', '$lokasi', '$lingkupKegiatan', '$hasil', '$rekomendasi', '$foto', '$keteranganFoto', '$penyusunLaporan1', '$penyusunLaporan2', '$penyusunLaporan3')";
 
         mysqli_query($conn, $query);
     }else {
@@ -518,6 +518,7 @@ if(isset($_POST['cetak-spt'])){
                 <b>Sub Koordinator Bidang Inskal</b>
                 <br>
                 <br>
+                <br>
                 <br><b>Mahmud Yusuf</b>
             </div>
 
@@ -562,6 +563,9 @@ if(isset($_POST['cetak-spt'])){
                     <td>Sumber Dana</td>
                     <td>:</td>
                     <td>' . nl2br($sumberDana) . '</td>
+                </tr>
+                <tr>
+                    <td><span style="color:white;">1</span></td>
                 </tr>
                 <tr style="padding-top: 20px;">
                     <td></td>
