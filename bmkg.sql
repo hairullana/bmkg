@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2021 at 03:43 AM
+-- Generation Time: Nov 26, 2021 at 06:45 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.3.16
+-- PHP Version: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,8 +46,8 @@ CREATE TABLE `data_bmkg` (
 --
 
 INSERT INTO `data_bmkg` (`id`, `pegawai`, `jumlah_peralatan`, `provinsi`, `jenis_alat`, `nama_alat`, `lokasi`, `kondisi`, `tanggal_update`, `tanggal_pelaksanaan`, `kalibrasi_end`) VALUES
-(1, 'Karel Mogi', 1, 'Bali', 'Sound System', 'Speaker A43', 'Jl. Ayani', 'Baik', '2021-11-07', '2021-11-10', '27-11-2021'),
-(3, 'Bayu Anu', 3, 'Bali', 'Laptop', 'Laptop Asus 6432', 'Jl. Kedonganan', 'Baik', '2021-10-31', '2021-11-08', '23-11-2021');
+(1, 'Karel Mogi', 1, 'Bali', 'Sound System', 'Speaker A43', 'Jl. Ayani', 'Baik', '2021-11-07', '2021-11-10', 'Rivaldo'),
+(3, 'Bayu Anu', 3, 'Bali', 'Laptop', 'Laptop Asus 6432', 'Jl. Kedonganan', 'Baik', '2021-10-31', '2021-11-08', 'Suhar');
 
 -- --------------------------------------------------------
 
@@ -67,15 +67,18 @@ CREATE TABLE `laporan` (
   `hasil` text NOT NULL,
   `rekomendasi` text NOT NULL,
   `foto` text NOT NULL,
-  `keterangan-foto` text NOT NULL
+  `keterangan-foto` text NOT NULL,
+  `penyusunLaporan1` varchar(64) NOT NULL,
+  `penyusunLaporan2` varchar(64) NOT NULL,
+  `penyusunLaporan3` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `laporan`
 --
 
-INSERT INTO `laporan` (`id`, `periode-tanggal`, `judul-kegiatan`, `pendahuluan`, `pelaksana`, `dasar-kegiatan`, `lokasi`, `lingkup-kegiatan`, `hasil`, `rekomendasi`, `foto`, `keterangan-foto`) VALUES
-(2, '26 Maret 2021', 'Musyawarah besar bersama 2021 ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Semua anggota yang aktif', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. ', 'Jimbaran', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', '61971f1fd173c.jpg', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.');
+INSERT INTO `laporan` (`id`, `periode-tanggal`, `judul-kegiatan`, `pendahuluan`, `pelaksana`, `dasar-kegiatan`, `lokasi`, `lingkup-kegiatan`, `hasil`, `rekomendasi`, `foto`, `keterangan-foto`, `penyusunLaporan1`, `penyusunLaporan2`, `penyusunLaporan3`) VALUES
+(2, '26 Maret 2021', 'Musyawarah besar bersama 2021. Hanya sebagai contoh judul yang panjang saja', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Semua anggota yang aktif', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. ', 'Jimbaran, Kecamatan Kuta Selan, Kabupaten Badung', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', '61971f1fd173c.jpg', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Karel', 'Leo', 'Rivaldo');
 
 -- --------------------------------------------------------
 
@@ -152,7 +155,7 @@ CREATE TABLE `spt` (
 --
 
 INSERT INTO `spt` (`id`, `no-tugas`, `nama`, `nip`, `gol`, `jabatan-utama`, `unit-kerja`, `nama1`, `nip1`, `gol1`, `jabatan1`, `nama2`, `nip2`, `gol2`, `jabatan2`, `tugas`, `lokasi`, `lama`, `tanggal-berangkat`, `dana`) VALUES
-(5, '123X6', 'Luh Ris', '385509238', 'II', 'Manager', 'Denpasar', 'Kadek', '327253409', 'I', 'Akunting', 'Putu', '3864896', 'I', 'Data Analis', 'Rapat Besar', 'Jakarta', '2 Bulan', '27 Oktober 2021', 'Internal');
+(5, '123X6', 'Luh Ris', '385509238', 'II', 'Manager', 'Balai Besar Meteorologi, Klimatologi, dan Gefisika Wilayah III', 'Kadek', '327253409', 'I', 'Akunting', 'Putu', '3864896', 'I', 'Data Analis', 'Rapat Besar', '1. Jakarta\r\n2. Bali\r\n', '2 Bulan', '27 Oktober 2021', 'Internal');
 
 -- --------------------------------------------------------
 
@@ -223,19 +226,19 @@ ALTER TABLE `data_bmkg`
 -- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `nota`
 --
 ALTER TABLE `nota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `spt`
 --
 ALTER TABLE `spt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

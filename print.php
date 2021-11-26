@@ -318,6 +318,7 @@ if(isset($_POST['cetak-spt'])){
 
 
     $print = '
+        <title>PRINT LAPORAN</title>
         <link rel="stylesheet" href="src/style.css">
         <div style="margin: 0px 50px;">
             <div style="text-align: center;">
@@ -451,7 +452,9 @@ if(isset($_POST['cetak-spt'])){
 
 
 
-    $print = '<link rel="stylesheet" href="src/style.css">
+    $print = '
+    <title>PRINT NOTA</title>
+    <link rel="stylesheet" href="src/style.css">
     <body style="padding:0px 150px">
         <table>
             <tr>
