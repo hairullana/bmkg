@@ -60,9 +60,9 @@ if(isset($_POST['cetak-spt'])){
                                 <img style="float:left;" width="120px" src="https://i.ibb.co/2jdyRKg/logo.png">
                             </div>
                         </td>
-                        <td>
+                        <td style="text-align: center;">
 
-                            <div style="text-align: center;">
+                            <div>
                                 <h4>BADAN METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</h4>
                                 <h5>BALAI BESAR METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA WILAYAH III</h5>
                                 <p>
@@ -197,9 +197,10 @@ if(isset($_POST['cetak-spt'])){
                 <div style="text-align: right;">
                     <p>Denpasar, ' . date('d-m-Y') . '</p>
                     <p><b>Kepala Balai Besar</b></p>
-                    
-                    
-                    <div style="margin:30px 0 0 0"><b>Agus Wahyu Raharjo</b></div>
+                    <br>
+                    <br>
+                    <br>
+                    <b>Agus Wahyu Raharjo</b>
                 </div>
             </div>
             
@@ -460,7 +461,7 @@ if(isset($_POST['cetak-spt'])){
                         <img style="float:left;" width="120px" src="https://i.ibb.co/2jdyRKg/logo.png">
                     </div>
                 </td>
-                <td>
+                <td style="text-align: center;">
 
                     <div style="text-align:center!important;">
                         <h4>BADAN METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</h4>

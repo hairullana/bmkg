@@ -115,8 +115,8 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
             <input required type="text" class="form-control" id="tugas"  name="tugas" placeholder="Tugas">
         </div>
         <div class="mb-3">
-            <label for="lokasi" class="form-label">Lokasi</label>
-            <input required type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi">
+          <label for="lokasi">Lokasi</label>
+          <textarea name="lokasi" required class="form-control" placeholder="Lokasi" id="lokasi" style="height: 100px"></textarea>
         </div>
         <div class="mb-3">
             <label for="lama" class="form-label">Selama</label>

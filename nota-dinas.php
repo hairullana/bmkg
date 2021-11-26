@@ -67,14 +67,14 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'lab'){
                     <input required name="tanggal" type="text" class="form-control" id="tanggal" placeholder="Tanggal">
                 </div>
                 <div class="mb-3">
-                  <label for="tembusan">Tembusan</label>
-                  <textarea name="tembusan" required class="form-control" placeholder="Tembusan" id="tembusan" style="height: 100px"></textarea>
+                    <label for="tembusan">Tembusan</label>
+                    <textarea name="tembusan" required class="form-control" placeholder="Tembusan" id="tembusan" style="height: 100px"></textarea>
                 </div>
             
                 <p class="header-secondary">1</p>
                 <div class="mb-3">
-                  <label for="tugas">Tugas</label>
-                  <textarea name="tugas" required class="form-control" placeholder="Tugas" id="tugas" style="height: 100px"></textarea>
+                    <label for="tugas">Tugas</label>
+                    <textarea name="tugas" required class="form-control" placeholder="Tugas" id="tugas" style="height: 100px"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="lokasi" class="form-label">lokasi</label>
