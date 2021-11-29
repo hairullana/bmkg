@@ -6,6 +6,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $mpdf = new \Mpdf\Mpdf();
 
+// $mpdf->shrink_tables_to_fit = 1;
+
 
 if(isset($_POST['cetak-spt'])){
 
@@ -214,6 +216,7 @@ if(isset($_POST['cetak-spt'])){
     
     ';
 }else if(isset($_POST['cetak-laporan'])){
+    
     if(!isset($_POST['dont-save-db'])){
         // var_dump($_FILES);die;
         $ukuranFile = $_FILES["foto"]["size"];
@@ -313,19 +316,25 @@ if(isset($_POST['cetak-spt'])){
     
 
 
+    // $mpdf -> shrink_tables_to_fit = 1;
 
 
+    // $mpdf->autoPageBreak = false;
+
+    $mpdf->use_kwt = true;
+
+    // $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'SRA4']);
 
     $print = '
         <title>PRINT LAPORAN</title>
         <link rel="stylesheet" href="src/style.css">
-        <div style="margin: 0px 50px;">
+        <div style="margin: 0px 50px">
             <div style="text-align: center;">
                 <h3>LAPORAN KEGIATAN KALIBRASI LAPANG STASIUN METEOROLOGI KLAS III MALI - ALOR DI BBMKG WILAYAH III</h3>
                 <h3>TANGGAL ' . nl2br($periodeTanggal) . '</h3>
             </div>
             
-            <table autosize="1" border="1" style="width: 100%;border-collapse: collapse;">
+            <table border="1" autosize="1" style="width: 100%;border-collapse: collapse">
                 <tr>
                     <th>NO</th>
                     <th>PERIHAL</th>
@@ -398,6 +407,8 @@ if(isset($_POST['cetak-spt'])){
                     </td>
                 </tr>
             </table>
+
+            
             
             <p>LAMPIRAN :</p>
             
@@ -655,6 +666,7 @@ if(isset($_POST['cetak-spt'])){
         </div>
     </body>';
 }
+
 
 
 $mpdf->WriteHTML($print);
