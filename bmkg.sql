@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2021 at 07:37 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.20
+-- Waktu pembuatan: 29 Nov 2021 pada 01.09
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_bmkg`
+-- Struktur dari tabel `data_bmkg`
 --
 
 CREATE TABLE `data_bmkg` (
@@ -42,7 +42,7 @@ CREATE TABLE `data_bmkg` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `data_bmkg`
+-- Dumping data untuk tabel `data_bmkg`
 --
 
 INSERT INTO `data_bmkg` (`id`, `pegawai`, `jumlah_peralatan`, `provinsi`, `jenis_alat`, `nama_alat`, `lokasi`, `kondisi`, `tanggal_update`, `tanggal_pelaksanaan`, `kalibrasi_end`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `data_bmkg` (`id`, `pegawai`, `jumlah_peralatan`, `provinsi`, `jenis
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laporan`
+-- Struktur dari tabel `laporan`
 --
 
 CREATE TABLE `laporan` (
@@ -74,16 +74,18 @@ CREATE TABLE `laporan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `laporan`
+-- Dumping data untuk tabel `laporan`
 --
 
 INSERT INTO `laporan` (`id`, `periode-tanggal`, `judul-kegiatan`, `pendahuluan`, `pelaksana`, `dasar-kegiatan`, `lokasi`, `lingkup-kegiatan`, `hasil`, `rekomendasi`, `foto`, `keterangan-foto`, `penyusunLaporan1`, `penyusunLaporan2`, `penyusunLaporan3`) VALUES
-(2, '26 Maret 2021', 'Musyawarah besar bersama 2021. Hanya sebagai contoh judul yang panjang saja', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Semua anggota yang aktif', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. ', 'Jimbaran, Kecamatan Kuta Selan, Kabupaten Badung', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', '61971f1fd173c.jpg', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Karel', 'Leo', 'Rivaldo');
+(2, '26 Maret 2021', 'Musyawarah besar bersama 2021. Hanya sebagai contoh judul yang panjang saja', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Semua anggota yang aktif', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa. ', 'Jimbaran, Kecamatan Kuta Selan, Kabupaten Badung', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', '61971f1fd173c.jpg', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis incidunt veniam ipsam dolorum quas? Non maiores asperiores vero, libero blanditiis perspiciatis numquam, hic quae laudantium explicabo nisi delectus ipsa.', 'Karel', 'Leo', 'Rivaldo'),
+(6, '30 OKT – 04 NOV 2021', 'Penyelenggaraan Kalibrasi Lapang Peralatan Stasiun Meteorologi Klas III Mali – Alor, AWS Digitalisasi, dan AWOS Kategori I di Nusa Tenggara Timur', 'Menurut ISO/IEC Guide 17025:2017 kalibrasi adalah kegiatan untuk menentukan kebenaran konvensional nilai penunjukkan alat ukur dan bahan ukur dengan cara membandingkan terhadap standar ukur yang mampu telusur (traceable) ke standar nasional maupun internasional untuk satuan ukuran dan/atau internasional dan bahan-bahan acuan tersertifikasi.', 'I Komang Susila, S.Pd, I Wayan Riksa Wibawa, Raras Ayu Paramita, S.Tr.Inst.', 'Surat Perintah Tugas Kepala Balai Besar MKG Wilayah III, Nomor: KP.05.00/397/KBB3/X/2021 tanggal 13 Oktober 2021\r\n', '1. Stasiun Meteorologi Klas III Mali - Alor\r\n2. AWS Digitalisasi Mali – Alor\r\n3. AWOS Kategori I Mali - Alor', 'Sabtu, 30 Oktober 2021\r\n1. Perjalanan Denpasar – Kupang - Alor\r\n2. Koordinasi dengan Kepala Stasiun Meteorologi\r\nKlas III Mali Alor.\r\nMinggu, 31 Oktober 2021\r\n1. Instal alat Standar kalibrasi\r\n2. Mengunduh data AWOS Kategori I dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n3. Menyesuaikan waktu alat standar dengan alat yang\r\ndi kalibrasi\r\n4. Melakukan kalibrasi pada AWOS Kategori I.\r\n5. Melakukan download data sementara\r\n6. Melakukan Kalibrasi dan adjustment pada\r\nAutomatic Rain Gauge pada AWOS\r\n7. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\nSenin, 01 November 2021\r\n1. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\n2. Melakukan kalibrasi peralatan Barometer Digital\r\n3. Melakukan kalibrasi peralatan Anemometer\r\n4. Melakukan kalibrasi alat Thermometer\r\n5. Menginstal alat kalibrator pada logger AWS\r\nDigitalisasi\r\n6. Melakukan kalibrasi AWS Digitalisasi.\r\n7. Mengunduh data AWS Digitalisasi dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n8. Mengunduh data AWS Standar dan AWS\r\nDigitalisasi.\r\nSelasa, 02 November 2021\r\n1. Melakukan Kalibrasi dan adjustment sensor tipping\r\nbucket pada AWS Digitalisasi\r\n2. Melakukan pengecekan Campbell Stokes, Panci\r\nPenguapan, Penakar Hujan Obs dan Penakar hujan\r\nHellmann.\r\n3. Mengolah data hasil kalibrasi dan melakukan\r\nanalisa terhadap hasil kalibrasi.\r\n4. Menyusun Laporan Sementara Hasil Kalibrasi\r\nStasiun Meteorologi Klas III Mali,Alor.\r\n5. Memberi label kalibrasi pada alat yang di Kalibrasi\r\n6. Melaporkan Hasil Kalibrasi sementara\r\n7. Penandatangan Laporan Awal\r\n8. Melakukan Perjalanan Alor ke Kupang\r\nRabu, 03 November 2021\r\n1. Transit di Kupang\r\nKamis, 04 November 2021\r\n1. Perjalanan dari Kupang menuju Kantor BBMKG', '6. Melakukan Kalibrasi dan adjustment pada\r\nAutomatic Rain Gauge pada AWOS\r\n7. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\nSenin, 01 November 2021\r\n1. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\n2. Melakukan kalibrasi peralatan Barometer Digital\r\n3. Melakukan kalibrasi peralatan Anemometer\r\n4. Melakukan kalibrasi alat Thermometer\r\n5. Menginstal alat kalibrator pada logger AWS\r\nDigitalisasi\r\n6. Melakukan kalibrasi AWS Digitalisasi.\r\n7. Mengunduh data AWS Digitalisasi dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n8. Mengunduh data AWS Standar dan AWS\r\nDigitalisasi.\r\nSelasa, 02 November 2021\r\n1. Melakukan Kalibrasi dan adjustment sensor tipping\r\nbucket pada AWS Digitalisasi\r\n2. Melakukan pengecekan Campbell Stokes, Panci\r\nPenguapan, Penakar Hujan Obs dan Penakar hujan\r\nHellmann.\r\n3. Mengolah data hasil kalibrasi dan melakukan\r\nanalisa terhadap hasil kalibrasi.\r\n4. Menyusun Laporan Sementara Hasil Kalibrasi\r\nStasiun Meteorologi Klas III Mali,Alor.\r\n5. Memberi label kalibrasi pada alat yang di Kalibrasi\r\n6. Melaporkan Hasil Kalibrasi sementara\r\n7. Penandatangan Laporan Awal\r\n8. Melakukan Perjalanan Alor ke Kupang\r\nRabu, 03 November 2021\r\n1. Transit di Kupang\r\nKamis, 04 November 2021\r\n1. Perjalanan dari Kupang menuju Kantor BBMKG', '6. Melakukan Kalibrasi dan adjustment pada\r\nAutomatic Rain Gauge pada AWOS\r\n7. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\nSenin, 01 November 2021\r\n1. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\n2. Melakukan kalibrasi peralatan Barometer Digital\r\n3. Melakukan kalibrasi peralatan Anemometer\r\n4. Melakukan kalibrasi alat Thermometer\r\n5. Menginstal alat kalibrator pada logger AWS\r\nDigitalisasi\r\n6. Melakukan kalibrasi AWS Digitalisasi.\r\n7. Mengunduh data AWS Digitalisasi dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n8. Mengunduh data AWS Standar dan AWS\r\nDigitalisasi.\r\nSelasa, 02 November 2021\r\n1. Melakukan Kalibrasi dan adjustment sensor tipping\r\nbucket pada AWS Digitalisasi\r\n2. Melakukan pengecekan Campbell Stokes, Panci\r\nPenguapan, Penakar Hujan Obs dan Penakar hujan\r\nHellmann.\r\n3. Mengolah data hasil kalibrasi dan melakukan\r\nanalisa terhadap hasil kalibrasi.\r\n4. Menyusun Laporan Sementara Hasil Kalibrasi\r\nStasiun Meteorologi Klas III Mali,Alor.\r\n5. Memberi label kalibrasi pada alat yang di Kalibrasi\r\n6. Melaporkan Hasil Kalibrasi sementara\r\n7. Penandatangan Laporan Awal\r\n8. Melakukan Perjalanan Alor ke Kupang\r\nRabu, 03 November 2021\r\n1. Transit di Kupang\r\nKamis, 04 November 2021\r\n1. Perjalanan dari Kupang menuju Kantor BBMKG', '61a40d038e5e9.png', 'testi', 'karel', 'leo', 'halo'),
+(7, '30 OKT – 04 NOV 2021', 'Penyelenggaraan Kalibrasi Lapang Peralatan Stasiun Meteorologi Klas III Mali – Alor, AWS Digitalisasi, dan AWOS Kategori I di Nusa Tenggara Timur', 'Menurut ISO/IEC Guide 17025:2017 kalibrasi adalah kegiatan untuk menentukan kebenaran konvensional nilai penunjukkan alat ukur dan bahan ukur dengan cara membandingkan terhadap standar ukur yang mampu telusur (traceable) ke standar nasional maupun internasional untuk satuan ukuran dan/atau internasional dan bahan-bahan acuan tersertifikasi.', 'I Komang Susila, S.Pd, I Wayan Riksa Wibawa, Raras Ayu Paramita, S.Tr.Inst.', 'Surat Perintah Tugas Kepala Balai Besar MKG Wilayah III, Nomor: KP.05.00/397/KBB3/X/2021 tanggal 13 Oktober 2021\r\n', '1. Stasiun Meteorologi Klas III Mali - Alor\r\n2. AWS Digitalisasi Mali – Alor\r\n3. AWOS Kategori I Mali - Alor', 'Sabtu, 30 Oktober 2021\r\n1. Perjalanan Denpasar – Kupang - Alor\r\n2. Koordinasi dengan Kepala Stasiun Meteorologi\r\nKlas III Mali Alor.\r\nMinggu, 31 Oktober 2021\r\n1. Instal alat Standar kalibrasi\r\n2. Mengunduh data AWOS Kategori I dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n3. Menyesuaikan waktu alat standar dengan alat yang\r\ndi kalibrasi\r\n4. Melakukan kalibrasi pada AWOS Kategori I.\r\n5. Melakukan download data sementara\r\n6. Melakukan Kalibrasi dan adjustment pada\r\nAutomatic Rain Gauge pada AWOS\r\n7. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\nSenin, 01 November 2021\r\n1. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\n2. Melakukan kalibrasi peralatan Barometer Digital\r\n3. Melakukan kalibrasi peralatan Anemometer\r\n4. Melakukan kalibrasi alat Thermometer\r\n5. Menginstal alat kalibrator pada logger AWS\r\nDigitalisasi\r\n6. Melakukan kalibrasi AWS Digitalisasi.\r\n7. Mengunduh data AWS Digitalisasi dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n8. Mengunduh data AWS Standar dan AWS\r\nDigitalisasi.\r\nSelasa, 02 November 2021\r\n1. Melakukan Kalibrasi dan adjustment sensor tipping\r\nbucket pada AWS Digitalisasi\r\n2. Melakukan pengecekan Campbell Stokes, Panci\r\nPenguapan, Penakar Hujan Obs dan Penakar hujan\r\nHellmann.\r\n3. Mengolah data hasil kalibrasi dan melakukan\r\nanalisa terhadap hasil kalibrasi.\r\n4. Menyusun Laporan Sementara Hasil Kalibrasi\r\nStasiun Meteorologi Klas III Mali,Alor.\r\n5. Memberi label kalibrasi pada alat yang di Kalibrasi\r\n6. Melaporkan Hasil Kalibrasi sementara\r\n7. Penandatangan Laporan Awal\r\n8. Melakukan Perjalanan Alor ke Kupang\r\nRabu, 03 November 2021\r\n1. Transit di Kupang\r\nKamis, 04 November 2021\r\n1. Perjalanan dari Kupang menuju Kantor BBMKG', '6. Melakukan Kalibrasi dan adjustment pada\r\nAutomatic Rain Gauge pada AWOS\r\n7. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\nSenin, 01 November 2021\r\n1. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\n2. Melakukan kalibrasi peralatan Barometer Digital\r\n3. Melakukan kalibrasi peralatan Anemometer\r\n4. Melakukan kalibrasi alat Thermometer\r\n5. Menginstal alat kalibrator pada logger AWS\r\nDigitalisasi\r\n6. Melakukan kalibrasi AWS Digitalisasi.\r\n7. Mengunduh data AWS Digitalisasi dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n8. Mengunduh data AWS Standar dan AWS\r\nDigitalisasi.\r\nSelasa, 02 November 2021\r\n1. Melakukan Kalibrasi dan adjustment sensor tipping\r\nbucket pada AWS Digitalisasi\r\n2. Melakukan pengecekan Campbell Stokes, Panci\r\nPenguapan, Penakar Hujan Obs dan Penakar hujan\r\nHellmann.\r\n3. Mengolah data hasil kalibrasi dan melakukan\r\nanalisa terhadap hasil kalibrasi.\r\n4. Menyusun Laporan Sementara Hasil Kalibrasi\r\nStasiun Meteorologi Klas III Mali,Alor.\r\n5. Memberi label kalibrasi pada alat yang di Kalibrasi\r\n6. Melaporkan Hasil Kalibrasi sementara\r\n7. Penandatangan Laporan Awal\r\n8. Melakukan Perjalanan Alor ke Kupang\r\nRabu, 03 November 2021\r\n1. Transit di Kupang\r\nKamis, 04 November 2021\r\n1. Perjalanan dari Kupang menuju Kantor BBMKG', '6. Melakukan Kalibrasi dan adjustment pada\r\nAutomatic Rain Gauge pada AWOS\r\n7. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\nSenin, 01 November 2021\r\n1. Mengunduh data AWS Standar dan AWOS\r\nKategori I.\r\n2. Melakukan kalibrasi peralatan Barometer Digital\r\n3. Melakukan kalibrasi peralatan Anemometer\r\n4. Melakukan kalibrasi alat Thermometer\r\n5. Menginstal alat kalibrator pada logger AWS\r\nDigitalisasi\r\n6. Melakukan kalibrasi AWS Digitalisasi.\r\n7. Mengunduh data AWS Digitalisasi dan AWS\r\nStandar lalu mengolah hasil data sementara.\r\n8. Mengunduh data AWS Standar dan AWS\r\nDigitalisasi.\r\nSelasa, 02 November 2021\r\n1. Melakukan Kalibrasi dan adjustment sensor tipping\r\nbucket pada AWS Digitalisasi\r\n2. Melakukan pengecekan Campbell Stokes, Panci\r\nPenguapan, Penakar Hujan Obs dan Penakar hujan\r\nHellmann.\r\n3. Mengolah data hasil kalibrasi dan melakukan\r\nanalisa terhadap hasil kalibrasi.\r\n4. Menyusun Laporan Sementara Hasil Kalibrasi\r\nStasiun Meteorologi Klas III Mali,Alor.\r\n5. Memberi label kalibrasi pada alat yang di Kalibrasi\r\n6. Melaporkan Hasil Kalibrasi sementara\r\n7. Penandatangan Laporan Awal\r\n8. Melakukan Perjalanan Alor ke Kupang\r\nRabu, 03 November 2021\r\n1. Transit di Kupang\r\nKamis, 04 November 2021\r\n1. Perjalanan dari Kupang menuju Kantor BBMKG', '61a40d73f39f9.png', 'testi', 'karel', 'leo', 'halo');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nota`
+-- Struktur dari tabel `nota`
 --
 
 CREATE TABLE `nota` (
@@ -115,16 +117,16 @@ CREATE TABLE `nota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `nota`
+-- Dumping data untuk tabel `nota`
 --
 
 INSERT INTO `nota` (`id`, `nomor`, `yth`, `dari`, `hal`, `tanggal`, `tembusan`, `tugas`, `lokasi`, `selama`, `tanggal-berangkat`, `tanggal-kembali`, `sumber-dana`, `nama`, `nip`, `pangkat`, `jabatan`, `nama2`, `nip2`, `pangkat2`, `jabatan2`, `nama3`, `nip3`, `pangkat3`, `jabatan3`) VALUES
-(2, '345864289', 'Luh Ris', 'Kadek Ayu', 'Penjadwalan Ulang', '28 Agustus 2021', 'Urgent', 'Melakukan penjadwalan ulang', 'Jawa timur', '3 Bulan', '27 Agustus 2021', '28 Agustus 2021', 'Internal', 'Putu', '384789', 'I', 'Data Analis', 'Gede', '32473', 'I', 'Bisnis Analis', 'Komang', '3892478321', 'I', 'Copy Writer');
+(2, 'ND / 042 / KSIKR / X / 2021', 'Koordinator Bidang Observasi', 'Sub Koordinator Bidang Instrumentasi dan Kalibrasi', 'Permohonan Revisi Pembuatan SPT', '27 Oktober 2021', '1. Kepala BBMKG Wil III Denpasar\r\n2. Arsip\r\n', 'AWOS dan Stasiun Meteorologi Nunukan\r\nAWOS dan Stamet Long Bawan\r\nARG Nunukan\r\nARG Sebatik\r\nARG Bunyu\r\nARG Linmas\r\nARG Kalimarau\r\nARG Samboja\r\nInaTEWS BKB\r\n', 'Kalimantan Utara', '14 (empat belas) hari', '19 Oktober 2021', '	01 November 2021', 'Penyelenggaraan Kalibrasi Peralatan ARG dan AWOS All Weather di BBMKG Wil III', 'Mahmud Yusuf ST., MT.', '197702011999031001', 'Pembina / IV-a', 'Sub Koordinator Bidang Inskal', 'Supriyono, ST., MM.', '196306221984031001', 'Pembina / IV-a', 'PMG Madya', 'Iwan Dwi Cahyono, S.Tr.', '198509222006041003', 'Penata Muda Tk.I / IIIb', 'PMG Pertama');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `spt`
+-- Struktur dari tabel `spt`
 --
 
 CREATE TABLE `spt` (
@@ -151,16 +153,18 @@ CREATE TABLE `spt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `spt`
+-- Dumping data untuk tabel `spt`
 --
 
 INSERT INTO `spt` (`id`, `no-tugas`, `nama`, `nip`, `gol`, `jabatan-utama`, `unit-kerja`, `nama1`, `nip1`, `gol1`, `jabatan1`, `nama2`, `nip2`, `gol2`, `jabatan2`, `tugas`, `lokasi`, `lama`, `tanggal-berangkat`, `dana`) VALUES
-(5, '123X6', 'Luh Ris', '385509238', 'II', 'Manager', 'Balai Besar Meteorologi, Klimatologi, dan Gefisika Wilayah III', 'Kadek', '327253409', 'I', 'Akunting', 'Putu', '3864896', 'I', 'Data Analis', 'Rapat Besar', '1. Jakarta\r\n2. Bali\r\n', '2 Bulan', '27 Oktober 2021', 'Internal');
+(5, 'KP 05 00/060/KBB3/II/2021', 'Agus Wahyu Raharjo, SP', '19620829 198703 1 001', 'Pembina Utama Muda, IV/c', 'Kepala Balai Besar', 'Balai Besar Meteorologi, Klimatologi, dan Gefisika Wilayah III', 'Ita Ayu Purnawati, S.Tr', '19920924 201312 2 002', 'Penata Muda, III/a', 'PMG Pertama', 'Kurnia Rubi Andini, S.Tr', '19950329 201411 2 001', 'Penata Muda, III/a', 'PMG Pertama', 'Melaksanakan Kalibrasi ARG, AWS dan Stasiun Meteorologi Kalianget', '1. ARG Socah\r\n2. ARG Sampang\r\n3. ARG Dasuk\r\n4. AWS Sampang\r\n5. (BPMJM) Batumarmar\r\n6. Stasiun Meteorologi Kalianget', '9 (sembilan) hari', '3 - 1 Maret 2021', 'Penyelenggaraan Kalibrasi Peralatan ARG dan AWS di BBMKG Wilayah III'),
+(8, 'KP.05.00/060/KBB3/II2021', 'Agus Wahyu Raharjo SP', '19620829', 'Pembina Utama Muda IV/c', 'Kepala Balai Besar', 'Balai Besar Meteorologi, Klimatologi dan Geofisika Wilayah III', 'Ita Ayu Purnawati, S TR', '19620829 19620829 002', 'Pembina Utama Muda IV/c', 'Pmg Pertama', 'Kepala Balai Besar', 'Kepala Balai Besar', 'Kepala Balai Besar', 'Kepala Balai Besar', 'Melaksanakan Kalibrasi ARG, AWS, dan Stasiun Meteorologi Kalianget', '1. ARG Socah\r\n2. ARG Sampang\r\n3. ARG Dasuk\r\n4. AWS Sampang\r\n5. (BPJM) hahaha\r\n6. Statisun wkkwkwk', '9 (sembilan ) Hari', '3 -11 maret', 'Penyelenggara Kalibrasi Peralatan ARG dan AWS di BMKG Wilayah III'),
+(9, 'KP.05.00/060/KBB3/II2021', 'Agus Wahyu Raharjo SP', '19620829', 'Pembina Utama Muda IV/c', 'Kepala Balai Besar', 'Balai Besar Meteorologi, Klimatologi dan Geofisika Wilayah III', 'Ita Ayu Purnawati, S TR', '19620829 19620829 002', 'Pembina Utama Muda IV/c', 'Pmg Pertama', 'Kepala Balai Besar', 'Kepala Balai Besar', 'Kepala Balai Besar', 'Kepala Balai Besar', 'Melaksanakan Kalibrasi ARG, AWS, dan Stasiun Meteorologi Kalianget', '1. ARG Socah\r\n2. ARG Sampang\r\n3. ARG Dasuk\r\n4. AWS Sampang\r\n5. (BPJM) hahaha\r\n6. Statisun wkkwkwk', '9 (sembilan ) Hari', '3 -11 maret', 'Penyelenggara Kalibrasi Peralatan ARG dan AWS di BMKG Wilayah III');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -170,7 +174,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `jabatan`) VALUES
@@ -183,62 +187,62 @@ INSERT INTO `user` (`username`, `password`, `jabatan`) VALUES
 --
 
 --
--- Indexes for table `data_bmkg`
+-- Indeks untuk tabel `data_bmkg`
 --
 ALTER TABLE `data_bmkg`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `laporan`
+-- Indeks untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `nota`
+-- Indeks untuk tabel `nota`
 --
 ALTER TABLE `nota`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `spt`
+-- Indeks untuk tabel `spt`
 --
 ALTER TABLE `spt`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `data_bmkg`
+-- AUTO_INCREMENT untuk tabel `data_bmkg`
 --
 ALTER TABLE `data_bmkg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `laporan`
+-- AUTO_INCREMENT untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `nota`
+-- AUTO_INCREMENT untuk tabel `nota`
 --
 ALTER TABLE `nota`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `spt`
+-- AUTO_INCREMENT untuk tabel `spt`
 --
 ALTER TABLE `spt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

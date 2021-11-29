@@ -57,7 +57,7 @@ if(isset($_POST['cetak-spt'])){
                         <td>
 
                             <div style="text-align: right;">
-                                <img style="float:left;" width="120px" src="https://i.ibb.co/2jdyRKg/logo.png">
+                                <img style="float:left;" width="90px" src="https://i.ibb.co/2jdyRKg/logo.png">
                             </div>
                         </td>
                         <td style="text-align: center;">
@@ -76,7 +76,7 @@ if(isset($_POST['cetak-spt'])){
                 </table>
                 <hr style="border:2px solid black">
                 
-                <div style="margin: 25px 0px;text-align: center;">
+                <div style="margin:0px;text-align: center;">
                     <u><b>SURAT TUGAS</b></u>
                     <br>NOMOR : ' . nl2br($noTugas) . '
                 </div>
@@ -192,12 +192,11 @@ if(isset($_POST['cetak-spt'])){
                     </tr>
                 </table>
                 
-                <p class="mt-3">Demikian, untuk dilaksanakan sebagaimana mestinya</p>
+                <p>Demikian, untuk dilaksanakan sebagaimana mestinya</p>
                 
                 <div style="text-align: right;">
                     <p>Denpasar, ' . date('d-m-Y') . '</p>
                     <p><b>Kepala Balai Besar</b></p>
-                    <br>
                     <br>
                     <br>
                     <b>Agus Wahyu Raharjo</b>
@@ -326,7 +325,7 @@ if(isset($_POST['cetak-spt'])){
                 <h3>TANGGAL ' . nl2br($periodeTanggal) . '</h3>
             </div>
             
-            <table border="1" style="width: 100%;border-collapse: collapse;">
+            <table autosize="1" border="1" style="width: 100%;border-collapse: collapse;">
                 <tr>
                     <th>NO</th>
                     <th>PERIHAL</th>
@@ -522,6 +521,7 @@ if(isset($_POST['cetak-spt'])){
                 <br><b>Mahmud Yusuf</b>
             </div>
 
+            <p style="page-break-after:always;"></p>
             <p>
                 Tembusan:
                 <br>' . nl2br($tembusan) . '
