@@ -1,5 +1,7 @@
 <?php
 
+require 'conn.php';
+
 
 if(!isset($_POST['dont-save-db'])){
   // var_dump($_FILES);die;
@@ -194,3 +196,9 @@ $print = '
   </div>';
 
 echo $print;
+
+?>
+
+<script>
+  window.print();
+</script>

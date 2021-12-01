@@ -532,11 +532,11 @@ if(isset($_POST['cetak-spt'])){
                 <br><b>Mahmud Yusuf</b>
             </div>
 
-            <p style="page-break-after:always;"></p>
             <p>
-                Tembusan:
-                <br>' . nl2br($tembusan) . '
+            Tembusan:
+            <br>' . nl2br($tembusan) . '
             </p>
+            <p style="page-break-after:always;"></p>
 
             <table>
                 <tr>
