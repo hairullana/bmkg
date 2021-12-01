@@ -312,7 +312,7 @@ if(isset($_POST["search"])){
                   <td><?= nl2br($data["judul-kegiatan"]) ?></td>
                   <td><?= nl2br($data["lokasi"]) ?></td>
                   <td>
-                    <form action="print.php" method="post">
+                    <form action="cetak.php" method="post">
                       <input type="hidden" name="periode-tanggal" value="<?= $data['periode-tanggal'] ?>">
                       <input type="hidden" name="judul-kegiatan" value="<?= $data['judul-kegiatan'] ?>">
                       <input type="hidden" name="pendahuluan" value="<?= $data['pendahuluan'] ?>">
@@ -431,7 +431,7 @@ if(isset($_POST["search"])){
                   <td><?= nl2br($data["judul-kegiatan"]) ?></td>
                   <td><?= nl2br($data["lokasi"]) ?></td>
                   <td>
-                    <form action="print.php" method="post">
+                    <form action="cetak.php" method="post">
                       <input type="hidden" name="periode-tanggal" value="<?= $data['periode-tanggal'] ?>">
                       <input type="hidden" name="judul-kegiatan" value="<?= $data['judul-kegiatan'] ?>">
                       <input type="hidden" name="pendahuluan" value="<?= $data['pendahuluan'] ?>">

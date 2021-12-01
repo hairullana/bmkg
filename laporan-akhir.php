@@ -45,7 +45,7 @@ if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'tu'){
 <div class="container">
     <p class="header-tambah">Laporan Akhir</p>
 
-    <form action="print.php" method="post" enctype="multipart/form-data">
+    <form action="cetak.php" method="post" enctype="multipart/form-data">
 
       <div class="row">
 
